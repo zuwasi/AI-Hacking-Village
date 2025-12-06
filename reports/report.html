@@ -1,0 +1,1374 @@
+<html xmlns:graph="graph" xmlns:results="results">
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <style type="text/css">
+    BODY,P,OL,TD,pre{font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000;}
+    A:link {font-family: Arial, Helvetica, sans-serif;font-style: normal;color: #990000;text-decoration: none;}
+    A:active {font-family: Arial, Helvetica, sans-serif;font-style: normal;color: #990000;text-decoration: none;}
+    A:visited {font-family: Arial, Helvetica, sans-serif;font-style: normal;color: #999999;text-decoration: none;}
+    A:hover {font-family: Arial, Helvetica, sans-serif;font-style: normal;color: #990000;text-decoration: underline;}
+    A.gray_link:link {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_link:active {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_link:visited {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_link:hover {font-family: Arial;font-size: 12px;color: #666666;text-decoration: underline;}
+    A.red_link:link {font-family: Arial;font-size: 12px;color: #990000;text-decoration: none;}
+    A.red_link:active {font-family: Arial;font-size: 12px;color: #990000;text-decoration: none;}
+    A.red_link:visited {font-family: Arial;font-size: 12px;color: #990000;text-decoration: none;}
+    A.red_link:hover {font-family: Arial;font-size: 12px;color: #990000;text-decoration: underline;}
+    A.green_link:link {font-family: Arial;font-size: 12px;color: #008040;text-decoration: none;}
+    A.green_link:active {font-family: Arial;font-size: 12px;color: #008040;text-decoration: none;}
+    A.green_link:visited {font-family: Arial;font-size: 12px;color: #008040;text-decoration: none;}
+    A.green_link:hover {font-family: Arial;font-size: 12px;color: #008040;text-decoration: underline;}
+    A.black_link:link {font-family: Arial;font-size: 12px;color: #000000;text-decoration: none;}
+    A.black_link:active {font-family: Arial;font-size: 12px;color: #000000;text-decoration: none;}
+    A.black_link:visited {font-family: Arial;font-size: 12px;color: #000000;text-decoration: none;}
+    A.black_link:hover {font-family: Arial;font-size: 12px;color: #000000;text-decoration: underline;}
+    
+    A.blue_link:link {font-family: Arial;font-size: 12px;color: #427fb6;text-decoration: none;}
+    A.blue_link:active {font-family: Arial;font-size: 12px;color: #427fb6;text-decoration: none;}
+    A.blue_link:visited {font-family: Arial;font-size: 12px;color: #427fb6;text-decoration: none;}
+    A.blue_link:hover {font-family: Arial;font-size: 12px;color: #427fb6;text-decoration: underline;}
+    
+    A.gray_red_link:link {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_red_link:active {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_red_link:visited {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_red_link:hover {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    DIV.suite_details{margin-left: 40px; padding: 10px; border: 2px solid #99aaaa;}
+    DIV.test_comment{color:#666666;}
+    DIV.header{font-size: 32px; FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #427fb6 }
+    DIV.small_header{font-size: 18px; FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #427fb6 }    
+    FONT.gray {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #999999;}    
+    FONT.gray2, FONT.gray_red {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #666666;}
+    FONT.white {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #FFFFFF;}
+    FONT.time {font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #000000;}
+    FONT.black {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000;}
+    FONT.red {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #990000;}
+    FONT.red2 {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #990000; text-decoration: underline;}
+    FONT.blue {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #427fb6;}
+    FONT.green {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #008040;}
+    FONT.orange {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #F69500;}
+    FONT.goldenrod {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #DAA520;}    
+    FONT.small {font-size: 3px;font-family: Arial, Helvetica, sans-serif;color: #cccccc;}
+    IMG.screenshot{float:left; margin-right: 20px; border:1px solid black;}
+    SELECT.cs_authors {font-family: Arial, Helvetica, sans-serif;font-size: 12px;}  
+    SELECT.ju_authors {font-family: Arial, Helvetica, sans-serif;font-size: 12px;}  
+    SPAN.toggle_button{width: 16px; padding-right: 2px; display: inline-block;} 
+    TD.associations{vertical-align: top;}
+    TD.collapse_controls{text-align:right;}
+    TD.cs_authors{font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000;border: 1px; bordercolor: #d9c8ac;}
+    TD.error{background-color:#ffeeee}
+    TD.errorsingleborder{background-color:#ffeeee;border:1px solid #CBCBCB}
+    TD.singleborder{ border:1px solid #CBCBCB}
+    TABLE.header{background-color:#FFFFFF}
+    TABLE.singleborder{ border:1px solid #CBCBCB}
+    TABLE.doubleborder{ border:2px solid #CBCBCB}     
+    TABLE.singleborder_blue{ border:2px solid #427fb6}
+    TD.fixed_width{width: 150px;}
+    TD.no_error{}
+    TD.suite_details{padding:2px; }
+    UL.metrics {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000; list-style-type: none; margin: 0; padding-left:12px;}
+    UL.root {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000; list-style-type: none; margin: 0; padding-left:0px; margin-left:3px;}
+    UL {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000; list-style-type: none; margin: 0; padding-left:0px; margin-left:12px;}
+    LI {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000; list-style-type: none; margin: 0; padding-left: 0px;}
+    #foldheader{cursor:pointer;cursor:hand ;}
+    #cs_foldheader{cursor:pointer;cursor:hand ;}
+    #metrics_foldheader{cursor:pointer;cursor:hand ;}
+    #exec_foldheader{cursor:pointer;cursor:hand ;}
+    #paramsHeader {word-break:break-all;overflow: auto; padding: 3px;}
+    </style><title>C++test&nbsp;Report&nbsp;[2025-12-06T16:07:57+02:00]
+
+</title><script language="JavaScript">
+    var nwin;    
+    function openWin (loc_to_open) {    
+       if (!nwin || nwin.closed) {
+          nwin = window.open(loc_to_open,'');
+       } else {
+          nwin.location = loc_to_open;
+       }
+       nwin.focus();
+    }
+    function openDevReport (dev_rep_name) {
+       openWin('&id=' + dev_rep_name);
+    }
+    </script><script language="JavaScript">
+    function sortBySeverity(urgent){
+    if(urgent != null)  {
+        sev=document.getElementById("cs_sevtrue");
+        sev_link=document.getElementById("cs_link_sevtrue");
+        sev_title=document.getElementById("cs_title_sevtrue");
+    } else {
+        sev=document.getElementById("cs_sev");
+        sev_link=document.getElementById("cs_link_sev");
+        sev_title=document.getElementById("cs_title_sev");
+    }   
+    if(sev != null) sev.style.display='block';
+    if(sev_title != null) sev_title.style.display='block';
+    if(sev_link != null) {
+    sev_link.style.color="#666666";  
+    sev_link.style.textDecoration="none";
+    }
+    if(urgent != null)  {
+        cat=document.getElementById("cs_cattrue");
+        cat_link=document.getElementById("cs_link_cattrue");
+        cat_title=document.getElementById("cs_title_cattrue");
+    } else {
+        cat=document.getElementById("cs_cat");
+        cat_link=document.getElementById("cs_link_cat");
+        cat_title=document.getElementById("cs_title_cat");
+    }   
+    if(cat != null) cat.style.display='none';
+    if(cat_title != null) cat_title.style.display='none';
+    if(cat_link != null) {
+    cat_link.style.color="#990000";
+    cat_link.style.textDecoration="underline";
+    }
+    }
+    
+    function sortByCategory(urgent){
+    if(urgent != null)  {
+        sev=document.getElementById("cs_sevtrue");
+        sev_link=document.getElementById("cs_link_sevtrue");
+        sev_title=document.getElementById("cs_title_sevtrue");
+    } else {
+        sev=document.getElementById("cs_sev");
+        sev_link=document.getElementById("cs_link_sev");
+        sev_title=document.getElementById("cs_title_sev");
+    }
+    if(sev != null) sev.style.display='none';
+    if(sev_title != null) sev_title.style.display='none';
+    if(sev_link != null) { 
+    sev_link.style.color="#990000";   
+    sev_link.style.textDecoration="underline";
+    }       
+    if(urgent != null)  {
+        cat=document.getElementById("cs_cattrue");
+        cat_link=document.getElementById("cs_link_cattrue");
+        cat_title=document.getElementById("cs_title_cattrue");
+    } else {
+        cat=document.getElementById("cs_cat");
+        cat_link=document.getElementById("cs_link_cat");
+        cat_title=document.getElementById("cs_title_cat");
+    }
+    if(cat != null) cat.style.display='block';
+    if(cat_title != null) cat_title.style.display='block';
+    if(cat_link != null) { 
+    cat_link.style.color="#666666"; 
+    cat_link.style.textDecoration="none";
+    }
+    }
+    </script><script language="JavaScript">
+    var ns6=document.getElementById && !document.all
+    var ie4=document.all && navigator.userAgent.indexOf("Opera")==-1
+
+    function checkcontained(e)
+    {
+       cur=ns6 ? e.target : event.srcElement;
+       
+       checkFor("foldinglist", "foldheader", cur);
+       checkFor("cs_foldinglist", "cs_foldheader", cur);
+       checkFor("metrics_foldinglist", "metrics_foldheader", cur);
+       checkFor("exec_foldinglist", "exec_foldheader", cur);
+    }
+    
+    function checkFor(foldinglist, foldheader, cur)
+    {
+        var iscontained=0;
+        i = 0;
+        if (cur.id==foldheader) {
+           iscontained=1;
+        } 
+        while (ns6 && cur.parentNode || (ie4 && cur.parentElement)) {
+             if (cur.id==foldheader||cur.id==foldinglist){
+                iscontained=(cur.id==foldheader)? 1 : 0;
+                break;
+             }
+             cur=ns6? cur.parentNode : cur.parentElement;
+        }
+
+        if (iscontained) {
+           var foldercontent=ns6? cur.nextSibling.nextSibling : cur.all.tags("UL")[0];
+           if (foldercontent.style.display=="none"){
+               foldercontent.style.display="";
+           } else {
+               foldercontent.style.display="none";
+           }
+        }    
+    }
+    function expandCSDetails() {
+       expandCollapseAll("cs_foldinglist", true);
+    }
+
+    function collapseCSDetails() {
+       expandCollapseAll("cs_foldinglist", false);
+    }
+
+    function expandMetricsDetails() {
+    expandCollapseAll("metrics_foldinglist", true);
+    }
+
+    function collapseMetricsDetails() {
+    expandCollapseAll("metrics_foldinglist", false);
+    }
+
+    function expandExecDetails() {
+       expandCollapseAll("exec_foldinglist", true);
+    }
+
+    function collapseExecDetails() {
+       expandCollapseAll("exec_foldinglist", false);
+    }
+    
+    function expandCollapseAll(foldinglistID, collapse) 
+    {
+        if (document.getElementById && document.createElement) {
+            m = document.getElementById(foldinglistID).getElementsByTagName('ul');
+            var i;
+            for (i = 0; i < m.length; i++) {
+              if (collapse) {
+                 m[i].style.display='block';
+              } else {
+                 m[i].style.display='none';
+              }
+            }
+        }
+    }
+
+     if (ie4||ns6) {
+       document.onclick=checkcontained;
+    }
+
+    
+    function expandViolation(headerID, violationID, startIndex)
+    {
+        var violation = document.getElementById(violationID);
+        var m = document.getElementById(headerID).getElementsByTagName('td');
+
+        if (violation.style.display === '') {
+            violation.style.display = 'none';
+            for (i = startIndex; i < m.length; i++) {
+                m[i].style.backgroundColor = "#FFFFFF";
+            }
+        }
+        else{
+            violation.style.display = '';
+            for (i = startIndex; i < m.length; i++) {
+                m[i].style.backgroundColor = "#E0E0E0";
+            }
+        }
+    }
+    </script></head>
+<body bgcolor="#E7F0F5">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<table xmlns:textutil="textutil" xmlns:authors="authors" width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td bgcolor="#3965A6" background="rep_header_expander.jpg" height="80px" width="30%" align="left"><img src="rep_header_logo.png" alt="rep_header_logo.png" height="54px"></td>
+<td bgcolor="#3965A6" background="rep_header_expander.jpg" height="80px" width="40%" align="center"><img src="rep_header_3.png" alt="rep_header_3.png" height="54px"></td>
+<td bgcolor="#3965A6" background="rep_header_expander.jpg" height="80px" width="30%" align="center"></td>
+</tr>
+</table>
+<table width="100%" style="padding-left:25px;padding-right:25px;padding-bottom:25px;padding-top:0px" cellspacing="0">
+<tr>
+<td align="center">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td style="padding-left:20px" align="left" width="20%"></td>
+<td style="padding:10px" align="center" width="60%">
+<table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center">Builtin configuration:
+	    		&nbsp;<b>SEI CERT C Guidelines</b></td>
+</tr>
+<tr>
+<td width="16%" align="center"><font class="time">2025-12-06T16:07:57+02:00</font></td>
+</tr>
+</table>
+</td>
+<td style="padding-right:20px" align="right" width="20%"></td>
+</tr>
+</table>
+<table width="100%" class="singleborder_blue" style="padding-left:25px;padding-right:25px;padding-bottom:25px;padding-top:5px" cellspacing="0" bgcolor="#FFFFFF" bordercolor="#A0CAEC">
+<tr>
+<td><br xmlns:textutil="textutil"><a xmlns:textutil="textutil" name="cs"></a><table xmlns:textutil="textutil" class="header" width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td width="15%"></td>
+<td align="center">
+<div class="header">STATIC ANALYSIS</div>
+</td>
+<td width="15%" align="right" valign="bottom"></td>
+</tr>
+</table><br xmlns:textutil="textutil"><table xmlns:textutil="textutil" width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td width="80%">
+<table width="100%" class="singleborder" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td class="singleborder" width="40%" align="center" bgcolor="#F3F3F3" rowspan="2"><b>Project Name</b><br>&nbsp;
+</td>
+<td class="singleborder" align="center" bgcolor="#F3F3F3" colspan="4">&nbsp;<b>Tasks</b>&nbsp;
+</td>
+<td class="singleborder" align="center" bgcolor="#F3F3F3" colspan="2">&nbsp;<b>Files</b></td>
+<td class="singleborder" align="center" bgcolor="#F3F3F3" colspan="2">&nbsp;<b>Lines</b></td>
+</tr>
+<tr>
+<td class="singleborder" align="center" bgcolor="#F3F3F3">suppressed</td>
+<td class="singleborder" align="center" bgcolor="#F3F3F3">qfix</td>
+<td class="singleborder" align="center" bgcolor="#F3F3F3">total</td>
+<td class="singleborder" align="center" bgcolor="#F3F3F3">per 10,000 lines</td>
+<td class="singleborder" align="center" bgcolor="#F3F3F3">checked</td>
+<td class="singleborder" align="center" bgcolor="#F3F3F3">total</td>
+<td class="singleborder" align="center" bgcolor="#F3F3F3">checked</td>
+<td class="singleborder" align="center" bgcolor="#F3F3F3">total</td>
+</tr>
+<tr>
+<td class="singleborder" align="left">&nbsp;ecu_simulator</td>
+<td class="singleborder" align="right">&nbsp;0&nbsp;</td>
+<td class="singleborder" align="right">0&nbsp;</td>
+<td class="singleborder" align="right">212&nbsp;</td>
+<td class="singleborder" align="right">8379&nbsp;</td>
+<td class="singleborder" align="right">&nbsp;1&nbsp;</td>
+<td class="singleborder" align="right">1&nbsp;</td>
+<td class="singleborder" align="right">&nbsp;253&nbsp;</td>
+<td class="singleborder" align="right">253&nbsp;</td>
+</tr>
+<tr>
+<td class="singleborder" align="left">&nbsp;<b>Total</b> [0:00:20]
+
+</td>
+<td class="singleborder" align="right">&nbsp;<b>0</b>&nbsp;
+</td>
+<td class="singleborder" align="right">&nbsp;<b>0</b>&nbsp;
+</td>
+<td class="singleborder" align="right">&nbsp;<b>212</b>&nbsp;
+</td>
+<td class="singleborder" align="right">&nbsp;<b>8379</b>&nbsp;
+</td>
+<td class="singleborder" align="right"><b>1</b>&nbsp;
+</td>
+<td class="singleborder" align="right"><b>1</b>&nbsp;
+</td>
+<td class="singleborder" align="right"><b>253</b>&nbsp;
+</td>
+<td class="singleborder" align="right"><b>253</b>&nbsp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table><br xmlns:textutil="textutil"><table xmlns:textutil="textutil" width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<table width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<table class="header" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="30%">&nbsp;</td>
+<td align="center">
+<div class="small_header" id="cs_title_cat" style="display:block;">All Tasks&nbsp;by Category</div>
+<div class="small_header" id="cs_title_sev" style="display:none;">All Tasks&nbsp;by Severity</div>
+</td>
+<td align="right" width="30%"><font class="gray2">by:</font>&nbsp;&nbsp;&nbsp;<a xmlns:authors="authors" id="cs_link_cat" class="gray_red_link" href="javascript:sortByCategory()">Category</a>&nbsp;&nbsp;&nbsp;<a xmlns:authors="authors" id="cs_link_sev" class="gray_red_link" href="javascript:sortBySeverity()">Severity</a>&nbsp;&nbsp;&nbsp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="left">
+<div id="cs_cat" style="display:block;">
+<table width="100%" class="doubleborder" cellpadding="0" cellspacing="0" bordercolor="#CBCBCB">
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-MSC19_C (REC) For functions that return an array, prefer returning an empty array over a null value</b>&nbsp;<font class="gray">(CERT_C-MSC19)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid null pointer dereferencing&nbsp;<font class="gray">(CERT_C-MSC19-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-INT02_C (REC) Understand integer conversion rules</b>&nbsp;<font class="gray">(CERT_C-INT02)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Implicit conversions from wider to narrower integral type which may result in a loss of information shall not be used&nbsp;<font class="gray">(CERT_C-INT02-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-API01_C (REC) Avoid laying out strings in memory directly before sensitive data</b>&nbsp;<font class="gray">(CERT_C-API01)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid using unsafe string functions which may cause buffer overflows&nbsp;<font class="gray">(CERT_C-API01-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>3</b>]
+&nbsp;&nbsp;<b>CERT-API02_C (REC) Functions that read or write to or from an array should take an argument to specify the source or target
+size</b>&nbsp;<font class="gray">(CERT_C-API02)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid using unsafe string functions which may cause buffer overflows&nbsp;<font class="gray">(CERT_C-API02-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Don't use unsafe C functions that do write to range-unchecked buffers&nbsp;<font class="gray">(CERT_C-API02-b-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-INT07_C (REC) Use only explicitly signed or unsigned char type for numeric values</b>&nbsp;<font class="gray">(CERT_C-INT07)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The plain char type shall be used only for the storage and use of character values&nbsp;<font class="gray">(CERT_C-INT07-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>2</b>]
+&nbsp;&nbsp;<b>CERT-INT05_C (REC) Do not use input functions to convert character data if they cannot handle all possible inputs</b>&nbsp;<font class="gray">(CERT_C-INT05)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Avoid using unsafe string functions that do not check bounds&nbsp;<font class="gray">(CERT_C-INT05-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>4</b>]
+&nbsp;&nbsp;<b>CERT-MSC24_C (REC) Do not use deprecated or obsolescent functions</b>&nbsp;<font class="gray">(CERT_C-MSC24)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The 'atof', 'atoi', 'atol' and 'atoll' functions from the 'stdlib.h' or 'cstdlib' library should not be used&nbsp;<font class="gray">(CERT_C-MSC24-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid using unsafe string functions which may cause buffer overflows&nbsp;<font class="gray">(CERT_C-MSC24-c-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Don't use unsafe C functions that do write to range-unchecked buffers&nbsp;<font class="gray">(CERT_C-MSC24-d-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-INT10_C (REC) Do not assume a positive remainder when using the % operator</b>&nbsp;<font class="gray">(CERT_C-INT10)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The operands of the remainder operator '%' should be of unsigned integer types&nbsp;<font class="gray">(CERT_C-INT10-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-MSC30_C (RULE) Do not use the rand() function for generating pseudorandom numbers</b>&nbsp;<font class="gray">(CERT_C-MSC30)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Do not use the rand() function for generating pseudorandom numbers&nbsp;<font class="gray">(CERT_C-MSC30-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>2</b>]
+&nbsp;&nbsp;<b>CERT-MEM04_C (REC) Beware of zero-length allocations</b>&nbsp;<font class="gray">(CERT_C-MEM04)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;The validity of values passed to library functions shall be checked&nbsp;<font class="gray">(CERT_C-MEM04-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>3</b>]
+&nbsp;&nbsp;<b>CERT-ENV01_C (REC) Do not make assumptions about the size of an environment variable</b>&nbsp;<font class="gray">(CERT_C-ENV01)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Don't use unsafe C functions that do write to range-unchecked buffers&nbsp;<font class="gray">(CERT_C-ENV01-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid using unsafe string functions which may cause buffer overflows&nbsp;<font class="gray">(CERT_C-ENV01-b-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-MSC01_C (REC) Strive for logical completeness</b>&nbsp;<font class="gray">(CERT_C-MSC01)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;All 'if...else-if' constructs shall be terminated with an 'else' clause&nbsp;<font class="gray">(CERT_C-MSC01-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>6</b>]
+&nbsp;&nbsp;<b>CERT-INT31_C (RULE) Ensure that integer conversions do not result in lost or misinterpreted data</b>&nbsp;<font class="gray">(CERT_C-INT31)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;An expression of essentially Boolean type should always be used where an operand is interpreted as a Boolean value&nbsp;<font class="gray">(CERT_C-INT31-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;The value of an expression shall not be assigned to an object of a different essential type category&nbsp;<font class="gray">(CERT_C-INT31-i-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&nbsp;<font class="gray">(CERT_C-INT31-j-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-STR31_C (RULE) Guarantee that storage for strings has sufficient space for character data and the null terminator</b>&nbsp;<font class="gray">(CERT_C-STR31)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid using unsafe string functions which may cause buffer overflows&nbsp;<font class="gray">(CERT_C-STR31-e-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>2</b>]
+&nbsp;&nbsp;<b>CERT-MEM07_C (REC) Ensure that the arguments to calloc(), when multiplied, do not wrap</b>&nbsp;<font class="gray">(CERT_C-MEM07)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;The validity of values passed to library functions shall be checked&nbsp;<font class="gray">(CERT_C-MEM07-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-MSC32_C (RULE) Properly seed pseudorandom number generators</b>&nbsp;<font class="gray">(CERT_C-MSC32)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Properly seed pseudorandom number generators&nbsp;<font class="gray">(CERT_C-MSC32-d-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-EXP20_C (REC) Perform explicit tests to determine success, true and false, and equality</b>&nbsp;<font class="gray">(CERT_C-EXP20)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Tests of a value against zero should be made explicit, unless the operand is effectively Boolean&nbsp;<font class="gray">(CERT_C-EXP20-b-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>29</b>]
+&nbsp;&nbsp;<b>CERT-MSC41_C (RULE) Never hard code sensitive information</b>&nbsp;<font class="gray">(CERT_C-MSC41)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>29</b>]
+&nbsp;&nbsp;Do not hard code string literals&nbsp;<font class="gray">(CERT_C-MSC41-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>3</b>]
+&nbsp;&nbsp;<b>CERT-API00_C (REC) Functions should validate their parameters</b>&nbsp;<font class="gray">(CERT_C-API00)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;The validity of parameters must be checked inside each function&nbsp;<font class="gray">(CERT_C-API00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-EXP34_C (RULE) Do not dereference null pointers</b>&nbsp;<font class="gray">(CERT_C-EXP34)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid null pointer dereferencing&nbsp;<font class="gray">(CERT_C-EXP34-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>3</b>]
+&nbsp;&nbsp;<b>CERT-EXP37_C (RULE) Call functions with the correct number and type of arguments</b>&nbsp;<font class="gray">(CERT_C-EXP37)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;Functions shall always have visible prototype at the function call&nbsp;<font class="gray">(CERT_C-EXP37-d-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>2</b>]
+&nbsp;&nbsp;<b>CERT-CON33_C (RULE) Avoid race conditions when using library functions</b>&nbsp;<font class="gray">(CERT_C-CON33)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Avoid using thread-unsafe functions&nbsp;<font class="gray">(CERT_C-CON33-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>6</b>]
+&nbsp;&nbsp;<b>CERT-EXP00_C (REC) Use parentheses for precedence of operation</b>&nbsp;<font class="gray">(CERT_C-EXP00)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>6</b>]
+&nbsp;&nbsp;Use parenthesis to clarify expression order if operators with precedence lower than arithmetic are used&nbsp;<font class="gray">(CERT_C-EXP00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>14</b>]
+&nbsp;&nbsp;<b>CERT-DCL15_C (REC) Declare file-scope objects or functions that do not need external linkage as static</b>&nbsp;<font class="gray">(CERT_C-DCL15)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>14</b>]
+&nbsp;&nbsp;Objects or functions with external linkage shall be declared in a header file&nbsp;<font class="gray">(CERT_C-DCL15-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>4</b>]
+&nbsp;&nbsp;<b>CERT-DCL13_C (REC) Declare function parameters that are pointers to values not changed by the function as const</b>&nbsp;<font class="gray">(CERT_C-DCL13)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;A pointer parameter in a function prototype should be declared as pointer to const if the pointer is not used to modify the
+addressed object&nbsp;<font class="gray">(CERT_C-DCL13-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>35</b>]
+&nbsp;&nbsp;<b>CERT-EXP12_C (REC) Do not ignore values returned by functions</b>&nbsp;<font class="gray">(CERT_C-EXP12)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>35</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-EXP12-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-STR00_C (REC) Represent characters using an appropriate type</b>&nbsp;<font class="gray">(CERT_C-STR00)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The plain char type shall be used only for the storage and use of character values&nbsp;<font class="gray">(CERT_C-STR00-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>2</b>]
+&nbsp;&nbsp;<b>CERT-STR07_C (REC) Use the bounds-checking interfaces for string manipulation</b>&nbsp;<font class="gray">(CERT_C-STR07)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Avoid using unsafe string functions that do not check bounds&nbsp;<font class="gray">(CERT_C-STR07-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-STR04_C (REC) Use plain char for characters in the basic character set</b>&nbsp;<font class="gray">(CERT_C-STR04)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The plain char type shall be used only for the storage and use of character values&nbsp;<font class="gray">(CERT_C-STR04-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>3</b>]
+&nbsp;&nbsp;<b>CERT-DCL37_C (RULE) Do not declare or define a reserved identifier</b>&nbsp;<font class="gray">(CERT_C-DCL37)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;The names of standard library macros should not be reused (C11 code)&nbsp;<font class="gray">(CERT_C-DCL37-d-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>15</b>]
+&nbsp;&nbsp;<b>CERT-POS54_C (RULE) Detect and handle POSIX library errors</b>&nbsp;<font class="gray">(CERT_C-POS54)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>15</b>]
+&nbsp;&nbsp;The value returned by a POSIX library function that may return an error should be used&nbsp;<font class="gray">(CERT_C-POS54-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>29</b>]
+&nbsp;&nbsp;<b>CERT-ERR33_C (RULE) Detect and handle standard library errors</b>&nbsp;<font class="gray">(CERT_C-ERR33)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>14</b>]
+&nbsp;&nbsp;The value returned by a standard library function that may return an error should be used&nbsp;<font class="gray">(CERT_C-ERR33-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>15</b>]
+&nbsp;&nbsp;Always check the returned value of non-void function&nbsp;<font class="gray">(CERT_C-ERR33-d-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-ERR34_C (RULE) Detect errors when converting a string to a number</b>&nbsp;<font class="gray">(CERT_C-ERR34)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The 'atof', 'atoi', 'atol' and 'atoll' functions from the 'stdlib.h' or 'cstdlib' library should not be used&nbsp;<font class="gray">(CERT_C-ERR34-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-ERR07_C (REC) Prefer functions that support error checking over equivalent functions that don't</b>&nbsp;<font class="gray">(CERT_C-ERR07)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The 'atof', 'atoi', 'atol' and 'atoll' functions from the 'stdlib.h' or 'cstdlib' library should not be used&nbsp;<font class="gray">(CERT_C-ERR07-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>5</b>]
+&nbsp;&nbsp;<b>CERT-DCL06_C (REC) Use meaningful symbolic constants to represent literal values</b>&nbsp;<font class="gray">(CERT_C-DCL06)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>5</b>]
+&nbsp;&nbsp;Use meaningful symbolic constants to represent literal values&nbsp;<font class="gray">(CERT_C-DCL06-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>7</b>]
+&nbsp;&nbsp;<b>CERT-DCL00_C (REC) Const-qualify immutable objects</b>&nbsp;<font class="gray">(CERT_C-DCL00)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;Declare local variable as const whenever possible&nbsp;<font class="gray">(CERT_C-DCL00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;Declare parameters as const whenever possible&nbsp;<font class="gray">(CERT_C-DCL00-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>16</b>]
+&nbsp;&nbsp;<b>CERT-ERR02_C (REC) Avoid in-band error indicators</b>&nbsp;<font class="gray">(CERT_C-ERR02)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>16</b>]
+&nbsp;&nbsp;The input/output functions from the 'cstdio' and 'cwchar' libraries should not be used&nbsp;<font class="gray">(CERT_C-ERR02-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-ERR04_C (REC) Choose an appropriate termination strategy</b>&nbsp;<font class="gray">(CERT_C-ERR04)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The 'exit()' function from the 'stdlib.h' or 'cstdlib' library shall not be used&nbsp;<font class="gray">(CERT_C-ERR04-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-ERR05_C (REC) Application-independent code should provide error detection without dictating error handling</b>&nbsp;<font class="gray">(CERT_C-ERR05)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The 'exit()' function from the 'stdlib.h' or 'cstdlib' library shall not be used&nbsp;<font class="gray">(CERT_C-ERR05-b-3)</font>&nbsp;
+</td>
+</tr>
+</table>
+</div>
+<div id="cs_sev" style="display:none;">
+<table width="100%" class="doubleborder" cellpadding="0" cellspacing="0" bordercolor="#CBCBCB">
+<tr>
+<td>&nbsp;
+[<b>83</b>]
+&nbsp;&nbsp;<b>Severity&nbsp;1 - Highest</b></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Don't use unsafe C functions that do write to range-unchecked buffers&nbsp;<font class="gray">(CERT_C-ENV01-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid using unsafe string functions which may cause buffer overflows&nbsp;<font class="gray">(CERT_C-ENV01-b-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>14</b>]
+&nbsp;&nbsp;The value returned by a standard library function that may return an error should be used&nbsp;<font class="gray">(CERT_C-ERR33-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>15</b>]
+&nbsp;&nbsp;Always check the returned value of non-void function&nbsp;<font class="gray">(CERT_C-ERR33-d-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Tests of a value against zero should be made explicit, unless the operand is effectively Boolean&nbsp;<font class="gray">(CERT_C-EXP20-b-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid null pointer dereferencing&nbsp;<font class="gray">(CERT_C-EXP34-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Properly seed pseudorandom number generators&nbsp;<font class="gray">(CERT_C-MSC32-d-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>29</b>]
+&nbsp;&nbsp;Do not hard code string literals&nbsp;<font class="gray">(CERT_C-MSC41-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>15</b>]
+&nbsp;&nbsp;The value returned by a POSIX library function that may return an error should be used&nbsp;<font class="gray">(CERT_C-POS54-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The plain char type shall be used only for the storage and use of character values&nbsp;<font class="gray">(CERT_C-STR00-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Avoid using unsafe string functions that do not check bounds&nbsp;<font class="gray">(CERT_C-STR07-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid using unsafe string functions which may cause buffer overflows&nbsp;<font class="gray">(CERT_C-STR31-e-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>18</b>]
+&nbsp;&nbsp;<b>Severity&nbsp;2 - High</b></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid using unsafe string functions which may cause buffer overflows&nbsp;<font class="gray">(CERT_C-API02-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Don't use unsafe C functions that do write to range-unchecked buffers&nbsp;<font class="gray">(CERT_C-API02-b-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The 'atof', 'atoi', 'atol' and 'atoll' functions from the 'stdlib.h' or 'cstdlib' library should not be used&nbsp;<font class="gray">(CERT_C-ERR07-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Implicit conversions from wider to narrower integral type which may result in a loss of information shall not be used&nbsp;<font class="gray">(CERT_C-INT02-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The plain char type shall be used only for the storage and use of character values&nbsp;<font class="gray">(CERT_C-INT07-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;An expression of essentially Boolean type should always be used where an operand is interpreted as a Boolean value&nbsp;<font class="gray">(CERT_C-INT31-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;The value of an expression shall not be assigned to an object of a different essential type category&nbsp;<font class="gray">(CERT_C-INT31-i-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&nbsp;<font class="gray">(CERT_C-INT31-j-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;The validity of values passed to library functions shall be checked&nbsp;<font class="gray">(CERT_C-MEM04-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;The validity of values passed to library functions shall be checked&nbsp;<font class="gray">(CERT_C-MEM07-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;All 'if...else-if' constructs shall be terminated with an 'else' clause&nbsp;<font class="gray">(CERT_C-MSC01-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Do not use the rand() function for generating pseudorandom numbers&nbsp;<font class="gray">(CERT_C-MSC30-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>111</b>]
+&nbsp;&nbsp;<b>Severity&nbsp;3 - Medium</b></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;The validity of parameters must be checked inside each function&nbsp;<font class="gray">(CERT_C-API00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid using unsafe string functions which may cause buffer overflows&nbsp;<font class="gray">(CERT_C-API01-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Avoid using thread-unsafe functions&nbsp;<font class="gray">(CERT_C-CON33-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;Declare local variable as const whenever possible&nbsp;<font class="gray">(CERT_C-DCL00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;Declare parameters as const whenever possible&nbsp;<font class="gray">(CERT_C-DCL00-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>5</b>]
+&nbsp;&nbsp;Use meaningful symbolic constants to represent literal values&nbsp;<font class="gray">(CERT_C-DCL06-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;A pointer parameter in a function prototype should be declared as pointer to const if the pointer is not used to modify the
+addressed object&nbsp;<font class="gray">(CERT_C-DCL13-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>14</b>]
+&nbsp;&nbsp;Objects or functions with external linkage shall be declared in a header file&nbsp;<font class="gray">(CERT_C-DCL15-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;The names of standard library macros should not be reused (C11 code)&nbsp;<font class="gray">(CERT_C-DCL37-d-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>16</b>]
+&nbsp;&nbsp;The input/output functions from the 'cstdio' and 'cwchar' libraries should not be used&nbsp;<font class="gray">(CERT_C-ERR02-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The 'exit()' function from the 'stdlib.h' or 'cstdlib' library shall not be used&nbsp;<font class="gray">(CERT_C-ERR04-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The 'exit()' function from the 'stdlib.h' or 'cstdlib' library shall not be used&nbsp;<font class="gray">(CERT_C-ERR05-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The 'atof', 'atoi', 'atol' and 'atoll' functions from the 'stdlib.h' or 'cstdlib' library should not be used&nbsp;<font class="gray">(CERT_C-ERR34-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>6</b>]
+&nbsp;&nbsp;Use parenthesis to clarify expression order if operators with precedence lower than arithmetic are used&nbsp;<font class="gray">(CERT_C-EXP00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>35</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-EXP12-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;Functions shall always have visible prototype at the function call&nbsp;<font class="gray">(CERT_C-EXP37-d-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Avoid using unsafe string functions that do not check bounds&nbsp;<font class="gray">(CERT_C-INT05-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The operands of the remainder operator '%' should be of unsigned integer types&nbsp;<font class="gray">(CERT_C-INT10-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid null pointer dereferencing&nbsp;<font class="gray">(CERT_C-MSC19-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The 'atof', 'atoi', 'atol' and 'atoll' functions from the 'stdlib.h' or 'cstdlib' library should not be used&nbsp;<font class="gray">(CERT_C-MSC24-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid using unsafe string functions which may cause buffer overflows&nbsp;<font class="gray">(CERT_C-MSC24-c-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Don't use unsafe C functions that do write to range-unchecked buffers&nbsp;<font class="gray">(CERT_C-MSC24-d-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The plain char type shall be used only for the storage and use of character values&nbsp;<font class="gray">(CERT_C-STR04-a-3)</font>&nbsp;
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table><br xmlns:textutil="textutil"><table xmlns:textutil="textutil" xmlns:authors="authors" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="20%"></td>
+<td width="60%" align="center">
+<div class="small_header">Tasks by Author</div>
+</td>
+<td width="20%" align="right"><a class="blue_link" href="#top">Back to Top </a>&nbsp;&nbsp;&nbsp;
+</td>
+</tr>
+</table>
+<table xmlns:textutil="textutil" align="center" class="singleborder" width="75%" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr bgcolor="#F3F3F3">
+<td class="singleborder" width="50%" align="center" rowspan="2"><b>Author</b>&nbsp;
+</td>
+<td class="singleborder" colspan="2" align="center"><b>Tasks</b></td>
+</tr>
+<tr bgcolor="#F3F3F3">
+<td class="singleborder" align="center">suppressed</td>
+<td class="singleborder" align="center">total</td>
+</tr>
+<tr>
+<td class="singleborder" align="left">&nbsp;<a xmlns:authors="authors" class="green_link" href="javascript:openWin(&#34;report_dev1.html#cst_dev1&#34;)">danie</a>&nbsp;
+</td>
+<td class="singleborder" align="right">&nbsp;0&nbsp;</td>
+<td class="singleborder" align="right">&nbsp;212&nbsp;</td>
+</tr>
+</table><br xmlns:textutil="textutil"><br></td>
+</tr>
+</table><script language="JavaScript">
+    if(document.getElementById("cs_link_sev") != null) {
+    document.getElementById("cs_link_sev").style.color="#990000";
+    document.getElementById("cs_link_sev").style.textDecoration="underline";
+    }
+    if(document.getElementById("cs_link_sevtrue") != null) {
+    document.getElementById("cs_link_sevtrue").style.color="#990000";
+    document.getElementById("cs_link_sevtrue").style.textDecoration="underline";
+    }
+    </script></td>
+</tr>
+</table>
+<table style="padding-right:25px;padding-left:25px" width="100%" cellspacing="0">
+<tr>
+<td>
+<table width="100%" class="singleborder_blue" bgcolor="#FFFFFF" bordercolor="#A0CAEC" cellspacing="0" align="center" rules="none">
+<tr>
+<td bgcolor="#FFFFFF" align="center">
+<div class="small_header">Test Parameters</div>
+</td>
+</tr>
+<tr>
+<td style="padding-right:25px;padding-left:25px;padding-top:4px;padding-bottom:4px" bgcolor="#FFFFFF" align="left">
+<table class="doubleborder" width="100%" bordercolor="#CBCBCB" cellpadding="4" cellspacing="0" align="center">
+<tr>
+<td bgcolor="#FFFFFF" align="left">
+<div id="paramsHeader">C++test: -config c++test.builtin://SEI CERT C Guidelines </div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table><br><table width="100%" bgcolor="#1D488D" border="0" bordercolor="#999999" cellpadding="10" cellspacing="0">
+<tr>
+<td align="center"><font class="white">&copy;Parasoft Corp. -&nbsp;C++test&nbsp;2025.1.0.20250523B2782&nbsp;Reporting System&nbsp;</font></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

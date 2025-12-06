@@ -1,0 +1,6 @@
+#Sat Dec 06 16:23:58 IST 2025
+/ecu_simulator//com.parasoft.xtest.checkers.api.cpp.options.compiler.family.win32.x86=gcc_6
+/ecu_simulator//com.parasoft.xtest.checkers.api.cpp.options.extractor.id=make_extractor_id
+/ecu_simulator//com.parasoft.xtest.checkers.api.cpp.options.make.command.line=mingw32-make -i -B CXX\=${CPPTEST_SCAN} CC\=${CPPTEST_SCAN} LD\=${CPPTEST_SCAN}
+/ecu_simulator//com.parasoft.xtest.checkers.api.cpp.options.preference.store.version=1.1
+project.path=/ecu_simulator

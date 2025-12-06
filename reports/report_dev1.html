@@ -1,0 +1,2982 @@
+<html xmlns:graph="graph" xmlns:results="results">
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <style type="text/css">
+    BODY,P,OL,TD,pre{font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000;}
+    A:link {font-family: Arial, Helvetica, sans-serif;font-style: normal;color: #990000;text-decoration: none;}
+    A:active {font-family: Arial, Helvetica, sans-serif;font-style: normal;color: #990000;text-decoration: none;}
+    A:visited {font-family: Arial, Helvetica, sans-serif;font-style: normal;color: #999999;text-decoration: none;}
+    A:hover {font-family: Arial, Helvetica, sans-serif;font-style: normal;color: #990000;text-decoration: underline;}
+    A.gray_link:link {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_link:active {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_link:visited {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_link:hover {font-family: Arial;font-size: 12px;color: #666666;text-decoration: underline;}
+    A.red_link:link {font-family: Arial;font-size: 12px;color: #990000;text-decoration: none;}
+    A.red_link:active {font-family: Arial;font-size: 12px;color: #990000;text-decoration: none;}
+    A.red_link:visited {font-family: Arial;font-size: 12px;color: #990000;text-decoration: none;}
+    A.red_link:hover {font-family: Arial;font-size: 12px;color: #990000;text-decoration: underline;}
+    A.green_link:link {font-family: Arial;font-size: 12px;color: #008040;text-decoration: none;}
+    A.green_link:active {font-family: Arial;font-size: 12px;color: #008040;text-decoration: none;}
+    A.green_link:visited {font-family: Arial;font-size: 12px;color: #008040;text-decoration: none;}
+    A.green_link:hover {font-family: Arial;font-size: 12px;color: #008040;text-decoration: underline;}
+    A.black_link:link {font-family: Arial;font-size: 12px;color: #000000;text-decoration: none;}
+    A.black_link:active {font-family: Arial;font-size: 12px;color: #000000;text-decoration: none;}
+    A.black_link:visited {font-family: Arial;font-size: 12px;color: #000000;text-decoration: none;}
+    A.black_link:hover {font-family: Arial;font-size: 12px;color: #000000;text-decoration: underline;}
+    
+    A.blue_link:link {font-family: Arial;font-size: 12px;color: #427fb6;text-decoration: none;}
+    A.blue_link:active {font-family: Arial;font-size: 12px;color: #427fb6;text-decoration: none;}
+    A.blue_link:visited {font-family: Arial;font-size: 12px;color: #427fb6;text-decoration: none;}
+    A.blue_link:hover {font-family: Arial;font-size: 12px;color: #427fb6;text-decoration: underline;}
+    
+    A.gray_red_link:link {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_red_link:active {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_red_link:visited {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    A.gray_red_link:hover {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
+    DIV.suite_details{margin-left: 40px; padding: 10px; border: 2px solid #99aaaa;}
+    DIV.test_comment{color:#666666;}
+    DIV.header{font-size: 32px; FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #427fb6 }
+    DIV.small_header{font-size: 18px; FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #427fb6 }    
+    FONT.gray {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #999999;}    
+    FONT.gray2, FONT.gray_red {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #666666;}
+    FONT.white {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #FFFFFF;}
+    FONT.time {font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #000000;}
+    FONT.black {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000;}
+    FONT.red {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #990000;}
+    FONT.red2 {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #990000; text-decoration: underline;}
+    FONT.blue {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #427fb6;}
+    FONT.green {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #008040;}
+    FONT.orange {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #F69500;}
+    FONT.goldenrod {font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #DAA520;}    
+    FONT.small {font-size: 3px;font-family: Arial, Helvetica, sans-serif;color: #cccccc;}
+    IMG.screenshot{float:left; margin-right: 20px; border:1px solid black;}
+    SELECT.cs_authors {font-family: Arial, Helvetica, sans-serif;font-size: 12px;}  
+    SELECT.ju_authors {font-family: Arial, Helvetica, sans-serif;font-size: 12px;}  
+    SPAN.toggle_button{width: 16px; padding-right: 2px; display: inline-block;} 
+    TD.associations{vertical-align: top;}
+    TD.collapse_controls{text-align:right;}
+    TD.cs_authors{font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000;border: 1px; bordercolor: #d9c8ac;}
+    TD.error{background-color:#ffeeee}
+    TD.errorsingleborder{background-color:#ffeeee;border:1px solid #CBCBCB}
+    TD.singleborder{ border:1px solid #CBCBCB}
+    TABLE.header{background-color:#FFFFFF}
+    TABLE.singleborder{ border:1px solid #CBCBCB}
+    TABLE.doubleborder{ border:2px solid #CBCBCB}     
+    TABLE.singleborder_blue{ border:2px solid #427fb6}
+    TD.fixed_width{width: 150px;}
+    TD.no_error{}
+    TD.suite_details{padding:2px; }
+    UL.metrics {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000; list-style-type: none; margin: 0; padding-left:12px;}
+    UL.root {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000; list-style-type: none; margin: 0; padding-left:0px; margin-left:3px;}
+    UL {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000; list-style-type: none; margin: 0; padding-left:0px; margin-left:12px;}
+    LI {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;color: #000000; list-style-type: none; margin: 0; padding-left: 0px;}
+    #foldheader{cursor:pointer;cursor:hand ;}
+    #cs_foldheader{cursor:pointer;cursor:hand ;}
+    #metrics_foldheader{cursor:pointer;cursor:hand ;}
+    #exec_foldheader{cursor:pointer;cursor:hand ;}
+    #paramsHeader {word-break:break-all;overflow: auto; padding: 3px;}
+    </style><title>danie
+- Static Analysis [ 0 / 212 / 0 ]
+
+</title><script language="JavaScript">
+    var nwin;    
+    function openWin (loc_to_open) {    
+       if (!nwin || nwin.closed) {
+          nwin = window.open(loc_to_open,'');
+       } else {
+          nwin.location = loc_to_open;
+       }
+       nwin.focus();
+    }
+    function openDevReport (dev_rep_name) {
+       openWin('&id=' + dev_rep_name);
+    }
+    </script><script language="JavaScript">
+    function sortBySeverity(urgent){
+    if(urgent != null)  {
+        sev=document.getElementById("cs_sevtrue");
+        sev_link=document.getElementById("cs_link_sevtrue");
+        sev_title=document.getElementById("cs_title_sevtrue");
+    } else {
+        sev=document.getElementById("cs_sev");
+        sev_link=document.getElementById("cs_link_sev");
+        sev_title=document.getElementById("cs_title_sev");
+    }   
+    if(sev != null) sev.style.display='block';
+    if(sev_title != null) sev_title.style.display='block';
+    if(sev_link != null) {
+    sev_link.style.color="#666666";  
+    sev_link.style.textDecoration="none";
+    }
+    if(urgent != null)  {
+        cat=document.getElementById("cs_cattrue");
+        cat_link=document.getElementById("cs_link_cattrue");
+        cat_title=document.getElementById("cs_title_cattrue");
+    } else {
+        cat=document.getElementById("cs_cat");
+        cat_link=document.getElementById("cs_link_cat");
+        cat_title=document.getElementById("cs_title_cat");
+    }   
+    if(cat != null) cat.style.display='none';
+    if(cat_title != null) cat_title.style.display='none';
+    if(cat_link != null) {
+    cat_link.style.color="#990000";
+    cat_link.style.textDecoration="underline";
+    }
+    }
+    
+    function sortByCategory(urgent){
+    if(urgent != null)  {
+        sev=document.getElementById("cs_sevtrue");
+        sev_link=document.getElementById("cs_link_sevtrue");
+        sev_title=document.getElementById("cs_title_sevtrue");
+    } else {
+        sev=document.getElementById("cs_sev");
+        sev_link=document.getElementById("cs_link_sev");
+        sev_title=document.getElementById("cs_title_sev");
+    }
+    if(sev != null) sev.style.display='none';
+    if(sev_title != null) sev_title.style.display='none';
+    if(sev_link != null) { 
+    sev_link.style.color="#990000";   
+    sev_link.style.textDecoration="underline";
+    }       
+    if(urgent != null)  {
+        cat=document.getElementById("cs_cattrue");
+        cat_link=document.getElementById("cs_link_cattrue");
+        cat_title=document.getElementById("cs_title_cattrue");
+    } else {
+        cat=document.getElementById("cs_cat");
+        cat_link=document.getElementById("cs_link_cat");
+        cat_title=document.getElementById("cs_title_cat");
+    }
+    if(cat != null) cat.style.display='block';
+    if(cat_title != null) cat_title.style.display='block';
+    if(cat_link != null) { 
+    cat_link.style.color="#666666"; 
+    cat_link.style.textDecoration="none";
+    }
+    }
+    
+    function expandViolation(headerID, violationID, startIndex)
+    {
+        var violation = document.getElementById(violationID);
+        var m = document.getElementById(headerID).getElementsByTagName('td');
+
+        if (violation.style.display === '') {
+            violation.style.display = 'none';
+            for (i = startIndex; i < m.length; i++) {
+                m[i].style.backgroundColor = "#FFFFFF";
+            }
+        }
+        else{
+            violation.style.display = '';
+            for (i = startIndex; i < m.length; i++) {
+                m[i].style.backgroundColor = "#E0E0E0";
+            }
+        }
+    }
+    </script></head>
+<body bgcolor="#E7F0F5">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<table xmlns:textutil="textutil" xmlns:authors="authors" width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td bgcolor="#3965A6" background="rep_header_expander.jpg" height="80px" width="30%" align="left"><img src="rep_header_logo.png" alt="rep_header_logo.png" height="54px"></td>
+<td bgcolor="#3965A6" background="rep_header_expander.jpg" height="80px" width="40%" align="center"><img src="rep_header_3.png" alt="rep_header_3.png" height="54px"></td>
+<td bgcolor="#3965A6" background="rep_header_expander.jpg" height="80px" width="30%" align="center"></td>
+</tr>
+</table>
+<table width="100%" style="padding-left:25px;padding-right:25px;padding-bottom:25px;padding-top:0px" cellspacing="0">
+<tr>
+<td align="center">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td style="padding-left:20px" align="left" width="20%"></td>
+<td style="padding:10px" align="center" width="60%">
+<table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center">Builtin configuration:
+	    		&nbsp;<b>SEI CERT C Guidelines</b></td>
+</tr>
+<tr>
+<td width="16%" align="center"><font class="time">2025-12-06T16:07:57+02:00</font></td>
+</tr>
+</table>
+</td>
+<td style="padding-right:20px" align="right" width="20%"></td>
+</tr>
+</table>
+<table width="100%" class="singleborder_blue" style="padding-left:25px;padding-right:25px;padding-bottom:25px;padding-top:5px" cellspacing="0" bgcolor="#FFFFFF" bordercolor="#A0CAEC">
+<tr>
+<td><a xmlns:textutil="textutil" name="cst_danie"></a><table xmlns:textutil="textutil" class="header" width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td width="15%"></td>
+<td align="center">
+<div class="header">STATIC ANALYSIS</div>
+</td>
+<td width="15%" align="right" valign="bottom"></td>
+</tr>
+</table><br><table xmlns:textutil="textutil" width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td align="left"><b>Tasks</b>:
+
+212&nbsp;<a class="black_link" href="#cs_danie"><b>total</b></a>,
+&nbsp;0&nbsp;<b>suppressed</b></td>
+</tr>
+</table><br xmlns:textutil="textutil"><table xmlns:textutil="textutil" width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<table class="header" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="30%">&nbsp;</td>
+<td align="center">
+<div class="small_header" id="cs_title_cat" style="display:block;">All Tasks&nbsp;by Category</div>
+<div class="small_header" id="cs_title_sev" style="display:none;">All Tasks&nbsp;by Severity</div>
+</td>
+<td align="right" width="30%"><font class="gray2">by:</font>&nbsp;&nbsp;&nbsp;<a xmlns:authors="authors" id="cs_link_cat" class="gray_red_link" href="javascript:sortByCategory()">Category</a>&nbsp;&nbsp;&nbsp;<a xmlns:authors="authors" id="cs_link_sev" class="gray_red_link" href="javascript:sortBySeverity()">Severity</a>&nbsp;&nbsp;&nbsp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="left">
+<div id="cs_cat" style="display:block;">
+<table class="doubleborder" width="100%" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-MSC19_C (REC) For functions that return an array, prefer returning an empty array over a null value</b>&nbsp;<font class="gray">(CERT_C-MSC19)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid null pointer dereferencing&nbsp;<font class="gray">(CERT_C-MSC19-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-INT02_C (REC) Understand integer conversion rules</b>&nbsp;<font class="gray">(CERT_C-INT02)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Implicit conversions from wider to narrower integral type which may result in a loss of information shall not be used&nbsp;<font class="gray">(CERT_C-INT02-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-API01_C (REC) Avoid laying out strings in memory directly before sensitive data</b>&nbsp;<font class="gray">(CERT_C-API01)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid using unsafe string functions which may cause buffer overflows&nbsp;<font class="gray">(CERT_C-API01-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>3</b>]
+&nbsp;&nbsp;<b>CERT-API02_C (REC) Functions that read or write to or from an array should take an argument to specify the source or target
+size</b>&nbsp;<font class="gray">(CERT_C-API02)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid using unsafe string functions which may cause buffer overflows&nbsp;<font class="gray">(CERT_C-API02-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Don't use unsafe C functions that do write to range-unchecked buffers&nbsp;<font class="gray">(CERT_C-API02-b-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-INT07_C (REC) Use only explicitly signed or unsigned char type for numeric values</b>&nbsp;<font class="gray">(CERT_C-INT07)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The plain char type shall be used only for the storage and use of character values&nbsp;<font class="gray">(CERT_C-INT07-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>2</b>]
+&nbsp;&nbsp;<b>CERT-INT05_C (REC) Do not use input functions to convert character data if they cannot handle all possible inputs</b>&nbsp;<font class="gray">(CERT_C-INT05)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Avoid using unsafe string functions that do not check bounds&nbsp;<font class="gray">(CERT_C-INT05-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>4</b>]
+&nbsp;&nbsp;<b>CERT-MSC24_C (REC) Do not use deprecated or obsolescent functions</b>&nbsp;<font class="gray">(CERT_C-MSC24)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The 'atof', 'atoi', 'atol' and 'atoll' functions from the 'stdlib.h' or 'cstdlib' library should not be used&nbsp;<font class="gray">(CERT_C-MSC24-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid using unsafe string functions which may cause buffer overflows&nbsp;<font class="gray">(CERT_C-MSC24-c-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Don't use unsafe C functions that do write to range-unchecked buffers&nbsp;<font class="gray">(CERT_C-MSC24-d-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-INT10_C (REC) Do not assume a positive remainder when using the % operator</b>&nbsp;<font class="gray">(CERT_C-INT10)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The operands of the remainder operator '%' should be of unsigned integer types&nbsp;<font class="gray">(CERT_C-INT10-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-MSC30_C (RULE) Do not use the rand() function for generating pseudorandom numbers</b>&nbsp;<font class="gray">(CERT_C-MSC30)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Do not use the rand() function for generating pseudorandom numbers&nbsp;<font class="gray">(CERT_C-MSC30-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>2</b>]
+&nbsp;&nbsp;<b>CERT-MEM04_C (REC) Beware of zero-length allocations</b>&nbsp;<font class="gray">(CERT_C-MEM04)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;The validity of values passed to library functions shall be checked&nbsp;<font class="gray">(CERT_C-MEM04-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>3</b>]
+&nbsp;&nbsp;<b>CERT-ENV01_C (REC) Do not make assumptions about the size of an environment variable</b>&nbsp;<font class="gray">(CERT_C-ENV01)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Don't use unsafe C functions that do write to range-unchecked buffers&nbsp;<font class="gray">(CERT_C-ENV01-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid using unsafe string functions which may cause buffer overflows&nbsp;<font class="gray">(CERT_C-ENV01-b-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-MSC01_C (REC) Strive for logical completeness</b>&nbsp;<font class="gray">(CERT_C-MSC01)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;All 'if...else-if' constructs shall be terminated with an 'else' clause&nbsp;<font class="gray">(CERT_C-MSC01-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>6</b>]
+&nbsp;&nbsp;<b>CERT-INT31_C (RULE) Ensure that integer conversions do not result in lost or misinterpreted data</b>&nbsp;<font class="gray">(CERT_C-INT31)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;An expression of essentially Boolean type should always be used where an operand is interpreted as a Boolean value&nbsp;<font class="gray">(CERT_C-INT31-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;The value of an expression shall not be assigned to an object of a different essential type category&nbsp;<font class="gray">(CERT_C-INT31-i-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&nbsp;<font class="gray">(CERT_C-INT31-j-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-STR31_C (RULE) Guarantee that storage for strings has sufficient space for character data and the null terminator</b>&nbsp;<font class="gray">(CERT_C-STR31)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid using unsafe string functions which may cause buffer overflows&nbsp;<font class="gray">(CERT_C-STR31-e-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>2</b>]
+&nbsp;&nbsp;<b>CERT-MEM07_C (REC) Ensure that the arguments to calloc(), when multiplied, do not wrap</b>&nbsp;<font class="gray">(CERT_C-MEM07)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;The validity of values passed to library functions shall be checked&nbsp;<font class="gray">(CERT_C-MEM07-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-MSC32_C (RULE) Properly seed pseudorandom number generators</b>&nbsp;<font class="gray">(CERT_C-MSC32)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Properly seed pseudorandom number generators&nbsp;<font class="gray">(CERT_C-MSC32-d-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-EXP20_C (REC) Perform explicit tests to determine success, true and false, and equality</b>&nbsp;<font class="gray">(CERT_C-EXP20)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Tests of a value against zero should be made explicit, unless the operand is effectively Boolean&nbsp;<font class="gray">(CERT_C-EXP20-b-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>29</b>]
+&nbsp;&nbsp;<b>CERT-MSC41_C (RULE) Never hard code sensitive information</b>&nbsp;<font class="gray">(CERT_C-MSC41)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>29</b>]
+&nbsp;&nbsp;Do not hard code string literals&nbsp;<font class="gray">(CERT_C-MSC41-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>3</b>]
+&nbsp;&nbsp;<b>CERT-API00_C (REC) Functions should validate their parameters</b>&nbsp;<font class="gray">(CERT_C-API00)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;The validity of parameters must be checked inside each function&nbsp;<font class="gray">(CERT_C-API00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-EXP34_C (RULE) Do not dereference null pointers</b>&nbsp;<font class="gray">(CERT_C-EXP34)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid null pointer dereferencing&nbsp;<font class="gray">(CERT_C-EXP34-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>3</b>]
+&nbsp;&nbsp;<b>CERT-EXP37_C (RULE) Call functions with the correct number and type of arguments</b>&nbsp;<font class="gray">(CERT_C-EXP37)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;Functions shall always have visible prototype at the function call&nbsp;<font class="gray">(CERT_C-EXP37-d-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>2</b>]
+&nbsp;&nbsp;<b>CERT-CON33_C (RULE) Avoid race conditions when using library functions</b>&nbsp;<font class="gray">(CERT_C-CON33)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Avoid using thread-unsafe functions&nbsp;<font class="gray">(CERT_C-CON33-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>6</b>]
+&nbsp;&nbsp;<b>CERT-EXP00_C (REC) Use parentheses for precedence of operation</b>&nbsp;<font class="gray">(CERT_C-EXP00)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>6</b>]
+&nbsp;&nbsp;Use parenthesis to clarify expression order if operators with precedence lower than arithmetic are used&nbsp;<font class="gray">(CERT_C-EXP00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>14</b>]
+&nbsp;&nbsp;<b>CERT-DCL15_C (REC) Declare file-scope objects or functions that do not need external linkage as static</b>&nbsp;<font class="gray">(CERT_C-DCL15)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>14</b>]
+&nbsp;&nbsp;Objects or functions with external linkage shall be declared in a header file&nbsp;<font class="gray">(CERT_C-DCL15-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>4</b>]
+&nbsp;&nbsp;<b>CERT-DCL13_C (REC) Declare function parameters that are pointers to values not changed by the function as const</b>&nbsp;<font class="gray">(CERT_C-DCL13)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;A pointer parameter in a function prototype should be declared as pointer to const if the pointer is not used to modify the
+addressed object&nbsp;<font class="gray">(CERT_C-DCL13-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>35</b>]
+&nbsp;&nbsp;<b>CERT-EXP12_C (REC) Do not ignore values returned by functions</b>&nbsp;<font class="gray">(CERT_C-EXP12)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>35</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-EXP12-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-STR00_C (REC) Represent characters using an appropriate type</b>&nbsp;<font class="gray">(CERT_C-STR00)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The plain char type shall be used only for the storage and use of character values&nbsp;<font class="gray">(CERT_C-STR00-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>2</b>]
+&nbsp;&nbsp;<b>CERT-STR07_C (REC) Use the bounds-checking interfaces for string manipulation</b>&nbsp;<font class="gray">(CERT_C-STR07)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Avoid using unsafe string functions that do not check bounds&nbsp;<font class="gray">(CERT_C-STR07-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-STR04_C (REC) Use plain char for characters in the basic character set</b>&nbsp;<font class="gray">(CERT_C-STR04)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The plain char type shall be used only for the storage and use of character values&nbsp;<font class="gray">(CERT_C-STR04-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>3</b>]
+&nbsp;&nbsp;<b>CERT-DCL37_C (RULE) Do not declare or define a reserved identifier</b>&nbsp;<font class="gray">(CERT_C-DCL37)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;The names of standard library macros should not be reused (C11 code)&nbsp;<font class="gray">(CERT_C-DCL37-d-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>15</b>]
+&nbsp;&nbsp;<b>CERT-POS54_C (RULE) Detect and handle POSIX library errors</b>&nbsp;<font class="gray">(CERT_C-POS54)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>15</b>]
+&nbsp;&nbsp;The value returned by a POSIX library function that may return an error should be used&nbsp;<font class="gray">(CERT_C-POS54-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>29</b>]
+&nbsp;&nbsp;<b>CERT-ERR33_C (RULE) Detect and handle standard library errors</b>&nbsp;<font class="gray">(CERT_C-ERR33)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>14</b>]
+&nbsp;&nbsp;The value returned by a standard library function that may return an error should be used&nbsp;<font class="gray">(CERT_C-ERR33-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>15</b>]
+&nbsp;&nbsp;Always check the returned value of non-void function&nbsp;<font class="gray">(CERT_C-ERR33-d-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-ERR34_C (RULE) Detect errors when converting a string to a number</b>&nbsp;<font class="gray">(CERT_C-ERR34)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The 'atof', 'atoi', 'atol' and 'atoll' functions from the 'stdlib.h' or 'cstdlib' library should not be used&nbsp;<font class="gray">(CERT_C-ERR34-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-ERR07_C (REC) Prefer functions that support error checking over equivalent functions that don't</b>&nbsp;<font class="gray">(CERT_C-ERR07)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The 'atof', 'atoi', 'atol' and 'atoll' functions from the 'stdlib.h' or 'cstdlib' library should not be used&nbsp;<font class="gray">(CERT_C-ERR07-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>5</b>]
+&nbsp;&nbsp;<b>CERT-DCL06_C (REC) Use meaningful symbolic constants to represent literal values</b>&nbsp;<font class="gray">(CERT_C-DCL06)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>5</b>]
+&nbsp;&nbsp;Use meaningful symbolic constants to represent literal values&nbsp;<font class="gray">(CERT_C-DCL06-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>7</b>]
+&nbsp;&nbsp;<b>CERT-DCL00_C (REC) Const-qualify immutable objects</b>&nbsp;<font class="gray">(CERT_C-DCL00)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;Declare local variable as const whenever possible&nbsp;<font class="gray">(CERT_C-DCL00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;Declare parameters as const whenever possible&nbsp;<font class="gray">(CERT_C-DCL00-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>16</b>]
+&nbsp;&nbsp;<b>CERT-ERR02_C (REC) Avoid in-band error indicators</b>&nbsp;<font class="gray">(CERT_C-ERR02)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>16</b>]
+&nbsp;&nbsp;The input/output functions from the 'cstdio' and 'cwchar' libraries should not be used&nbsp;<font class="gray">(CERT_C-ERR02-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-ERR04_C (REC) Choose an appropriate termination strategy</b>&nbsp;<font class="gray">(CERT_C-ERR04)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The 'exit()' function from the 'stdlib.h' or 'cstdlib' library shall not be used&nbsp;<font class="gray">(CERT_C-ERR04-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>1</b>]
+&nbsp;&nbsp;<b>CERT-ERR05_C (REC) Application-independent code should provide error detection without dictating error handling</b>&nbsp;<font class="gray">(CERT_C-ERR05)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The 'exit()' function from the 'stdlib.h' or 'cstdlib' library shall not be used&nbsp;<font class="gray">(CERT_C-ERR05-b-3)</font>&nbsp;
+</td>
+</tr>
+</table>
+</div>
+<div id="cs_sev" style="display:none;">
+<table width="100%" class="doubleborder" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td>&nbsp;
+[<b>83</b>]
+&nbsp;&nbsp;<b>Severity&nbsp;1 - Highest</b></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Don't use unsafe C functions that do write to range-unchecked buffers&nbsp;<font class="gray">(CERT_C-ENV01-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid using unsafe string functions which may cause buffer overflows&nbsp;<font class="gray">(CERT_C-ENV01-b-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>14</b>]
+&nbsp;&nbsp;The value returned by a standard library function that may return an error should be used&nbsp;<font class="gray">(CERT_C-ERR33-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>15</b>]
+&nbsp;&nbsp;Always check the returned value of non-void function&nbsp;<font class="gray">(CERT_C-ERR33-d-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Tests of a value against zero should be made explicit, unless the operand is effectively Boolean&nbsp;<font class="gray">(CERT_C-EXP20-b-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid null pointer dereferencing&nbsp;<font class="gray">(CERT_C-EXP34-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Properly seed pseudorandom number generators&nbsp;<font class="gray">(CERT_C-MSC32-d-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>29</b>]
+&nbsp;&nbsp;Do not hard code string literals&nbsp;<font class="gray">(CERT_C-MSC41-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>15</b>]
+&nbsp;&nbsp;The value returned by a POSIX library function that may return an error should be used&nbsp;<font class="gray">(CERT_C-POS54-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The plain char type shall be used only for the storage and use of character values&nbsp;<font class="gray">(CERT_C-STR00-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Avoid using unsafe string functions that do not check bounds&nbsp;<font class="gray">(CERT_C-STR07-a-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid using unsafe string functions which may cause buffer overflows&nbsp;<font class="gray">(CERT_C-STR31-e-1)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>18</b>]
+&nbsp;&nbsp;<b>Severity&nbsp;2 - High</b></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid using unsafe string functions which may cause buffer overflows&nbsp;<font class="gray">(CERT_C-API02-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Don't use unsafe C functions that do write to range-unchecked buffers&nbsp;<font class="gray">(CERT_C-API02-b-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The 'atof', 'atoi', 'atol' and 'atoll' functions from the 'stdlib.h' or 'cstdlib' library should not be used&nbsp;<font class="gray">(CERT_C-ERR07-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Implicit conversions from wider to narrower integral type which may result in a loss of information shall not be used&nbsp;<font class="gray">(CERT_C-INT02-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The plain char type shall be used only for the storage and use of character values&nbsp;<font class="gray">(CERT_C-INT07-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;An expression of essentially Boolean type should always be used where an operand is interpreted as a Boolean value&nbsp;<font class="gray">(CERT_C-INT31-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;The value of an expression shall not be assigned to an object of a different essential type category&nbsp;<font class="gray">(CERT_C-INT31-i-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category&nbsp;<font class="gray">(CERT_C-INT31-j-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;The validity of values passed to library functions shall be checked&nbsp;<font class="gray">(CERT_C-MEM04-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;The validity of values passed to library functions shall be checked&nbsp;<font class="gray">(CERT_C-MEM07-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;All 'if...else-if' constructs shall be terminated with an 'else' clause&nbsp;<font class="gray">(CERT_C-MSC01-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Do not use the rand() function for generating pseudorandom numbers&nbsp;<font class="gray">(CERT_C-MSC30-a-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;
+[<b>111</b>]
+&nbsp;&nbsp;<b>Severity&nbsp;3 - Medium</b></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;The validity of parameters must be checked inside each function&nbsp;<font class="gray">(CERT_C-API00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid using unsafe string functions which may cause buffer overflows&nbsp;<font class="gray">(CERT_C-API01-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Avoid using thread-unsafe functions&nbsp;<font class="gray">(CERT_C-CON33-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;Declare local variable as const whenever possible&nbsp;<font class="gray">(CERT_C-DCL00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;Declare parameters as const whenever possible&nbsp;<font class="gray">(CERT_C-DCL00-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>5</b>]
+&nbsp;&nbsp;Use meaningful symbolic constants to represent literal values&nbsp;<font class="gray">(CERT_C-DCL06-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>4</b>]
+&nbsp;&nbsp;A pointer parameter in a function prototype should be declared as pointer to const if the pointer is not used to modify the
+addressed object&nbsp;<font class="gray">(CERT_C-DCL13-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>14</b>]
+&nbsp;&nbsp;Objects or functions with external linkage shall be declared in a header file&nbsp;<font class="gray">(CERT_C-DCL15-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;The names of standard library macros should not be reused (C11 code)&nbsp;<font class="gray">(CERT_C-DCL37-d-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>16</b>]
+&nbsp;&nbsp;The input/output functions from the 'cstdio' and 'cwchar' libraries should not be used&nbsp;<font class="gray">(CERT_C-ERR02-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The 'exit()' function from the 'stdlib.h' or 'cstdlib' library shall not be used&nbsp;<font class="gray">(CERT_C-ERR04-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The 'exit()' function from the 'stdlib.h' or 'cstdlib' library shall not be used&nbsp;<font class="gray">(CERT_C-ERR05-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The 'atof', 'atoi', 'atol' and 'atoll' functions from the 'stdlib.h' or 'cstdlib' library should not be used&nbsp;<font class="gray">(CERT_C-ERR34-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>6</b>]
+&nbsp;&nbsp;Use parenthesis to clarify expression order if operators with precedence lower than arithmetic are used&nbsp;<font class="gray">(CERT_C-EXP00-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>35</b>]
+&nbsp;&nbsp;The value returned by a function having non-void return type shall be used&nbsp;<font class="gray">(CERT_C-EXP12-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;Functions shall always have visible prototype at the function call&nbsp;<font class="gray">(CERT_C-EXP37-d-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Avoid using unsafe string functions that do not check bounds&nbsp;<font class="gray">(CERT_C-INT05-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The operands of the remainder operator '%' should be of unsigned integer types&nbsp;<font class="gray">(CERT_C-INT10-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid null pointer dereferencing&nbsp;<font class="gray">(CERT_C-MSC19-b-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The 'atof', 'atoi', 'atol' and 'atoll' functions from the 'stdlib.h' or 'cstdlib' library should not be used&nbsp;<font class="gray">(CERT_C-MSC24-a-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;Avoid using unsafe string functions which may cause buffer overflows&nbsp;<font class="gray">(CERT_C-MSC24-c-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>2</b>]
+&nbsp;&nbsp;Don't use unsafe C functions that do write to range-unchecked buffers&nbsp;<font class="gray">(CERT_C-MSC24-d-3)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>1</b>]
+&nbsp;&nbsp;The plain char type shall be used only for the storage and use of character values&nbsp;<font class="gray">(CERT_C-STR04-a-3)</font>&nbsp;
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table><br xmlns:textutil="textutil"><table xmlns:textutil="textutil" width="100%" border="0" bordercolor="#CBCBCB" cellpadding="0" cellspacing="0">
+<tr>
+<td xmlns:authors="authors" style="padding-left:20px;" colspan="2" align="left" nowrap><a name="cs_dev1"></a><b>danie</b>&nbsp;&nbsp;Total Tasks			
+			:
+			&nbsp;212
+</td>
+<td xmlns:authors="authors" align="right"><a class="blue_link" href="#top">Back to Top </a>&nbsp;&nbsp;&nbsp;
+</td>
+</tr>
+<tr>
+<td colspan="3" align="left">
+<table width="100%" bgcolor="#FFFFFF" bordercolor="#CBCBCB" class="doubleborder" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td style="padding-right:10px;padding-left:10px" colspan="3"><b>/ecu_simulator/ecu_sim.c</b></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">35:&nbsp;</font></td>
+<td>Do not declare the 'ECU_ROAD' identifier since this name is a reserved macro name</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL37-d-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">36:&nbsp;</font></td>
+<td>Do not declare the 'ECU_RACE' identifier since this name is a reserved macro name</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL37-d-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">37:&nbsp;</font></td>
+<td>Do not declare the 'ECUType' identifier since this name is a reserved macro name</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL37-d-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">50:&nbsp;</font></td>
+<td>Do not use the literal constant '3'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL06-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">54:&nbsp;</font></td>
+<td>Global variable 'maps' has external linkage and is not declared in the header</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL15-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">55:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: R_A</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">55:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: Road A - basic</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">56:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: R_B</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">56:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: Road B - intermediate</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">57:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: R_C</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">57:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: Road C - advanced</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">58:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: Race A - 65 HP</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">58:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: X_A</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">59:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: Race B - 77 HP</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">59:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: X_B</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">60:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: Race C - 100 HP</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">60:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: X_C</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">63:&nbsp;</font></td>
+<td>Global variable 'vehicles' has external linkage and is not declared in the header</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL15-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">64:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: 123456</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">64:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: R_A</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">64:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: R_B</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">64:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: R_C</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">65:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: 234567</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">65:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: R_A</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">65:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: R_B</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">66:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: 345678</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">66:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: R_A</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">66:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: R_B</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">66:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: R_C</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">69:&nbsp;</font></td>
+<td>Global variable 'current_vin' has external linkage and is not declared in the header</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL15-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">70:&nbsp;</font></td>
+<td>Global variable 'current_ecu_type' has external linkage and is not declared in the header</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL15-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">71:&nbsp;</font></td>
+<td>Global variable 'current_min_license' has external linkage and is not declared in the header</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL15-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">73:&nbsp;</font></td>
+<td>Global variable 'vin_verification' has external linkage and is not declared in the header</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL15-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">75:&nbsp;</font></td>
+<td>Do not use the literal constant '512'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL06-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">75:&nbsp;</font></td>
+<td>Global variable 'log_buffer' has external linkage and is not declared in the header</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL15-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">77:&nbsp;</font></td>
+<td>Function 'init_system' has external linkage and is not declared in the header</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL15-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">78:&nbsp;</font></td>
+<td>Implicit conversion from 'signed long' type to 'unsigned int' type in function's argument</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-INT02-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">78:&nbsp;</font></td>
+<td>Result of "time" passed to library function "srand" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">78:&nbsp;</font></td>
+<td>Result of "time" passed to library function "srand" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">78:&nbsp;</font></td>
+<td>The 'srand' function should not be used in multithreading applications</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-CON33-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">78:&nbsp;</font></td>
+<td>The argument number '1' ('essentially signed' type) is passed to the function 'srand' as a parameter with the 'essentially
+unsigned' type
+</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-INT31-i-2</font></td>
+</tr>
+<tr id="authViolFAid41H" style="cursor:pointer" onclick="javascript:expandViolation('authViolFAid41H','authViolFAid41', '0')">
+<td width="1%" align="right" style="padding-left:10px">&nbsp;<font class="#000000"><span>+</span></font>&nbsp;
+</td>
+<td width="2%" align="right"><font class="gray">78:&nbsp;</font></td>
+<td>Value returned from method "time" should be checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-d-1</font></td>
+</tr>
+<tr id="authViolFAid41" style="display:none">
+<td bgcolor="#F5F5F5" style="padding-left:10px">&nbsp;</td>
+<!--bd_legend_required_marker-->
+<td bgcolor="#F5F5F5"></td>
+<td bgcolor="#F5F5F5" style="padding-right:10px;" colspan="2">
+<table width="100%" style="table-layout:fixed">
+<tr>
+<td><pre style="margin:0px;"><font color="#1569C7"><b>Method call</b>
+</font><font color="#1569C7">ecu_sim.c&nbsp;(78):&nbsp;</font><font color="black">time(...)</font><font color="green"></font>
+<font color="#B71C1C"><b>Point by which returned value should be checked</b>&nbsp;
+</font><font color="#B71C1C">ecu_sim.c&nbsp;(78):&nbsp;</font><font color="black">srand(time(NULL));</font><font color="green"></font></pre></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">82:&nbsp;</font></td>
+<td>Declare parameter 'map_id' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-b-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">82:&nbsp;</font></td>
+<td>Function 'find_map' has external linkage and is not declared in the header</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL15-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">82:&nbsp;</font></td>
+<td>Pass parameter "map_id" with const specifier</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL13-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">92:&nbsp;</font></td>
+<td>Declare parameter 'map_id' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-b-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">92:&nbsp;</font></td>
+<td>Declare parameter 'vehicle' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-b-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">92:&nbsp;</font></td>
+<td>Function 'is_map_allowed_for_vin' has external linkage and is not declared in the header</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL15-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">92:&nbsp;</font></td>
+<td>Parameter 'vehicle' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">92:&nbsp;</font></td>
+<td>Pass parameter "map_id" with const specifier</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL13-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">92:&nbsp;</font></td>
+<td>Pass parameter "vehicle" with const specifier</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL13-a-3</font></td>
+</tr>
+<tr id="authViolFAid52H" style="cursor:pointer" onclick="javascript:expandViolation('authViolFAid52H','authViolFAid52', '0')">
+<td width="1%" align="right" style="padding-left:10px">&nbsp;<font class="#000000"><span>+</span></font>&nbsp;
+</td>
+<td width="2%" align="right"><font class="gray">94:&nbsp;</font></td>
+<td>"vehicle" may possibly be null</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP34-a-1</font></td>
+</tr>
+<tr id="authViolFAid52" style="display:none">
+<td bgcolor="#F5F5F5" style="padding-left:10px">&nbsp;</td>
+<!--bd_legend_required_marker-->
+<td bgcolor="#F5F5F5"></td>
+<td bgcolor="#F5F5F5" style="padding-right:10px;" colspan="2">
+<table width="100%" style="table-layout:fixed">
+<tr>
+<td><pre style="margin:0px;"><font color="gray">ecu_sim.c&nbsp;(155):&nbsp;</font><font color="gray">if (current_vin[0] == '\0') {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (current_vin[0] == 0) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(161):&nbsp;</font><font color="gray">IgnitionMap* map = find_map(map_id);</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(83):&nbsp;</font><font color="gray">int i;</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(84):&nbsp;</font><font color="gray">for (i = 0; i &lt; MAX_MAPS; i++) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Loop condition evaluation: (i &lt; 6) (true)</font><font color="green">&nbsp;&nbsp;***&nbsp;Entering the loop</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(85):&nbsp;</font><font color="gray">if (strcmp(maps[i].id, map_id) == 0) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (strcmp(...) == 0) (assuming true)</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(86):&nbsp;</font><font color="gray">return &amp;maps[i];</font>
+<font color="gray">ecu_sim.c&nbsp;(162):&nbsp;</font><font color="gray">if (map == NULL) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (map == 0) (false)</font>
+<font color="#1569C7"><b>Source of null value</b>
+</font><font color="#1569C7">ecu_sim.c&nbsp;(168):&nbsp;</font><font color="black">VehicleInfo* vehicle = NULL;</font><font color="green"></font><font color="green">&nbsp;&nbsp;***&nbsp;Null value carrier: vehicle</font>
+<font color="gray">ecu_sim.c&nbsp;(169):&nbsp;</font><font color="gray">int i;</font>
+<font color="gray">ecu_sim.c&nbsp;(170):&nbsp;</font><font color="gray">for (i = 0; i &lt; MAX_VINS; i++) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Loop condition evaluation: (i &lt; 3) (true)</font><font color="green">&nbsp;&nbsp;***&nbsp;Entering the loop</font>
+<font color="gray">ecu_sim.c&nbsp;(171):&nbsp;</font><font color="gray">if (strcmp(vehicles[i].vin, current_vin) == 0) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (strcmp(...) == 0) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(170):&nbsp;</font><font color="gray">for (i = 0; i &lt; MAX_VINS; i++) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Loop condition evaluation: (i &lt; 3) (true)</font><font color="green">&nbsp;&nbsp;***&nbsp;Entering the loop</font>
+<font color="gray">ecu_sim.c&nbsp;(171):&nbsp;</font><font color="gray">if (strcmp(vehicles[i].vin, current_vin) == 0) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (strcmp(...) == 0) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(170):&nbsp;</font><font color="gray">for (i = 0; i &lt; MAX_VINS; i++) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Loop condition evaluation: (i &lt; 3) (false)</font><font color="green">&nbsp;&nbsp;***&nbsp;Not entering the loop</font>
+<font color="gray">ecu_sim.c&nbsp;(177):&nbsp;</font><font color="gray">printf("PROMPT: Re-enter VIN from motorcycle documents for verification:\n");</font>
+<font color="gray">ecu_sim.c&nbsp;(178):&nbsp;</font><font color="gray">fflush(stdout);</font>
+<font color="gray">ecu_sim.c&nbsp;(180):&nbsp;</font><font color="gray">scanf("%d", &amp;vin_verification);</font>
+<font color="gray">ecu_sim.c&nbsp;(182):&nbsp;</font><font color="gray">int current_vin_num = atoi(current_vin);</font>
+<font color="gray">ecu_sim.c&nbsp;(184):&nbsp;</font><font color="gray">if (vin_verification == current_vin_num) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (vin_verification == current_vin_num) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(190):&nbsp;</font><font color="gray">} else if (vin_verification &gt;= 100000 &amp;&amp; vin_verification &lt;= 999999) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (vin_verification &gt;= 100000) (assuming false)</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: vin_verification &gt;= 100000 &amp;&amp; vin_verification &lt;= 999999 (false)</font>
+<font color="gray">ecu_sim.c&nbsp;(196):&nbsp;</font><font color="black">is_map_allowed_for_vin(...)</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(93):&nbsp;</font><font color="gray">int i;</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#B71C1C"><b>Null pointer dereferencing point</b>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#B71C1C">ecu_sim.c&nbsp;(94):&nbsp;</font><font color="black">for (i = 0; i &lt; vehicle-&gt;num_allowed_maps; i++) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Null value carrier: vehicle</font><font color="green"></font></pre></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr id="authViolFAid54H" style="cursor:pointer" onclick="javascript:expandViolation('authViolFAid54H','authViolFAid54', '0')">
+<td width="1%" align="right" style="padding-left:10px">&nbsp;<font class="#000000"><span>+</span></font>&nbsp;
+</td>
+<td width="2%" align="right"><font class="gray">94:&nbsp;</font></td>
+<td>"vehicle" may possibly be null</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC19-b-3</font></td>
+</tr>
+<tr id="authViolFAid54" style="display:none">
+<td bgcolor="#F5F5F5" style="padding-left:10px">&nbsp;</td>
+<!--bd_legend_required_marker-->
+<td bgcolor="#F5F5F5"></td>
+<td bgcolor="#F5F5F5" style="padding-right:10px;" colspan="2">
+<table width="100%" style="table-layout:fixed">
+<tr>
+<td><pre style="margin:0px;"><font color="gray">ecu_sim.c&nbsp;(155):&nbsp;</font><font color="gray">if (current_vin[0] == '\0') {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (current_vin[0] == 0) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(161):&nbsp;</font><font color="gray">IgnitionMap* map = find_map(map_id);</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(83):&nbsp;</font><font color="gray">int i;</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(84):&nbsp;</font><font color="gray">for (i = 0; i &lt; MAX_MAPS; i++) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Loop condition evaluation: (i &lt; 6) (true)</font><font color="green">&nbsp;&nbsp;***&nbsp;Entering the loop</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(85):&nbsp;</font><font color="gray">if (strcmp(maps[i].id, map_id) == 0) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (strcmp(...) == 0) (assuming true)</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(86):&nbsp;</font><font color="gray">return &amp;maps[i];</font>
+<font color="gray">ecu_sim.c&nbsp;(162):&nbsp;</font><font color="gray">if (map == NULL) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (map == 0) (false)</font>
+<font color="#1569C7"><b>Source of null value</b>
+</font><font color="#1569C7">ecu_sim.c&nbsp;(168):&nbsp;</font><font color="black">VehicleInfo* vehicle = NULL;</font><font color="green"></font><font color="green">&nbsp;&nbsp;***&nbsp;Null value carrier: vehicle</font>
+<font color="gray">ecu_sim.c&nbsp;(169):&nbsp;</font><font color="gray">int i;</font>
+<font color="gray">ecu_sim.c&nbsp;(170):&nbsp;</font><font color="gray">for (i = 0; i &lt; MAX_VINS; i++) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Loop condition evaluation: (i &lt; 3) (true)</font><font color="green">&nbsp;&nbsp;***&nbsp;Entering the loop</font>
+<font color="gray">ecu_sim.c&nbsp;(171):&nbsp;</font><font color="gray">if (strcmp(vehicles[i].vin, current_vin) == 0) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (strcmp(...) == 0) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(170):&nbsp;</font><font color="gray">for (i = 0; i &lt; MAX_VINS; i++) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Loop condition evaluation: (i &lt; 3) (true)</font><font color="green">&nbsp;&nbsp;***&nbsp;Entering the loop</font>
+<font color="gray">ecu_sim.c&nbsp;(171):&nbsp;</font><font color="gray">if (strcmp(vehicles[i].vin, current_vin) == 0) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (strcmp(...) == 0) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(170):&nbsp;</font><font color="gray">for (i = 0; i &lt; MAX_VINS; i++) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Loop condition evaluation: (i &lt; 3) (false)</font><font color="green">&nbsp;&nbsp;***&nbsp;Not entering the loop</font>
+<font color="gray">ecu_sim.c&nbsp;(177):&nbsp;</font><font color="gray">printf("PROMPT: Re-enter VIN from motorcycle documents for verification:\n");</font>
+<font color="gray">ecu_sim.c&nbsp;(178):&nbsp;</font><font color="gray">fflush(stdout);</font>
+<font color="gray">ecu_sim.c&nbsp;(180):&nbsp;</font><font color="gray">scanf("%d", &amp;vin_verification);</font>
+<font color="gray">ecu_sim.c&nbsp;(182):&nbsp;</font><font color="gray">int current_vin_num = atoi(current_vin);</font>
+<font color="gray">ecu_sim.c&nbsp;(184):&nbsp;</font><font color="gray">if (vin_verification == current_vin_num) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (vin_verification == current_vin_num) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(190):&nbsp;</font><font color="gray">} else if (vin_verification &gt;= 100000 &amp;&amp; vin_verification &lt;= 999999) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (vin_verification &gt;= 100000) (assuming false)</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: vin_verification &gt;= 100000 &amp;&amp; vin_verification &lt;= 999999 (false)</font>
+<font color="gray">ecu_sim.c&nbsp;(196):&nbsp;</font><font color="black">is_map_allowed_for_vin(...)</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(93):&nbsp;</font><font color="gray">int i;</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#B71C1C"><b>Null pointer dereferencing point</b>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#B71C1C">ecu_sim.c&nbsp;(94):&nbsp;</font><font color="black">for (i = 0; i &lt; vehicle-&gt;num_allowed_maps; i++) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Null value carrier: vehicle</font><font color="green"></font></pre></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">102:&nbsp;</font></td>
+<td>Function 'cmd_identify' has external linkage and is not declared in the header</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL15-a-3</font></td>
+</tr>
+<tr id="authViolFAid57H" style="cursor:pointer" onclick="javascript:expandViolation('authViolFAid57H','authViolFAid57', '0')">
+<td width="1%" align="right" style="padding-left:10px">&nbsp;<font class="#000000"><span>+</span></font>&nbsp;
+</td>
+<td width="2%" align="right"><font class="gray">103:&nbsp;</font></td>
+<td>The "srand" function should be called before the call to the "rand" function to seed pseudo-random number generator</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC32-d-1</font></td>
+</tr>
+<tr id="authViolFAid57" style="display:none">
+<td bgcolor="#F5F5F5" style="padding-left:10px">&nbsp;</td>
+<!--bd_legend_required_marker-->
+<td bgcolor="#F5F5F5"></td>
+<td bgcolor="#F5F5F5" style="padding-right:10px;" colspan="2">
+<table width="100%" style="table-layout:fixed">
+<tr>
+<td><pre style="margin:0px;"><font color="#1569C7"><b>Start of the path</b>
+</font><font color="#1569C7">ecu_sim.c&nbsp;(102):&nbsp;</font><font color="black">void cmd_identify() {</font><font color="green"></font>
+<font color="#B71C1C"><b>Point where the method is called</b>&nbsp;
+</font><font color="#B71C1C">ecu_sim.c&nbsp;(103):&nbsp;</font><font color="black">rand()</font><font color="green"></font></pre></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">103:&nbsp;</font></td>
+<td>The 'rand' function should not be used in multithreading applications</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-CON33-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">103:&nbsp;</font></td>
+<td>The left-hand-side operand of the '%' operator should be of the unsigned integer type instead of the 'int' type</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-INT10-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">103:&nbsp;</font></td>
+<td>The library function 'rand()' should not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC30-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">104:&nbsp;</font></td>
+<td>Declare local variable 'vehicle' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">106:&nbsp;</font></td>
+<td>Avoid using unsafe string function 'strcpy' in your program</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-STR31-e-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">106:&nbsp;</font></td>
+<td>Avoid using unsafe string function 'strcpy' in your program</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC24-c-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">106:&nbsp;</font></td>
+<td>Avoid using unsafe string function 'strcpy' in your program</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ENV01-b-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">106:&nbsp;</font></td>
+<td>Avoid using unsafe string function 'strcpy' in your program</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API02-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">106:&nbsp;</font></td>
+<td>Avoid using unsafe string function 'strcpy' in your program</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API01-b-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">106:&nbsp;</font></td>
+<td>The value returned by the POSIX library function 'strcpy' should be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">106:&nbsp;</font></td>
+<td>Unsafe functions 'strcpy' is being used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC24-d-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">106:&nbsp;</font></td>
+<td>Unsafe functions 'strcpy' is being used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ENV01-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">106:&nbsp;</font></td>
+<td>Unsafe functions 'strcpy' is being used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API02-b-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">106:&nbsp;</font></td>
+<td>Unused function's "strcpy" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">106:&nbsp;</font></td>
+<td>Values "current_vin, vehicle, vin" passed to library function "strcpy" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">106:&nbsp;</font></td>
+<td>Values "current_vin, vehicle, vin" passed to library function "strcpy" without being checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MEM04-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">110:&nbsp;</font></td>
+<td>Unused function's "printf" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">112:&nbsp;</font></td>
+<td>Use parenthesis to clarify order ('==' is the first operand of '?:')</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">116:&nbsp;</font></td>
+<td>Unused function's "printf" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">117:&nbsp;</font></td>
+<td>Use parenthesis to clarify order ('-' is the second operand of '&lt;')</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">118:&nbsp;</font></td>
+<td>Unused function's "printf" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">121:&nbsp;</font></td>
+<td>Unused function's "printf" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">122:&nbsp;</font></td>
+<td>The 'fflush' library function should not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR02-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">122:&nbsp;</font></td>
+<td>The value returned by the POSIX library function 'fflush' should be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">122:&nbsp;</font></td>
+<td>The value returned by the standard library function 'fflush' should be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">122:&nbsp;</font></td>
+<td>Unused function's "fflush" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr id="authViolFAid85H" style="cursor:pointer" onclick="javascript:expandViolation('authViolFAid85H','authViolFAid85', '0')">
+<td width="1%" align="right" style="padding-left:10px">&nbsp;<font class="#000000"><span>+</span></font>&nbsp;
+</td>
+<td width="2%" align="right"><font class="gray">122:&nbsp;</font></td>
+<td>Value returned from method "fflush" should be checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-d-1</font></td>
+</tr>
+<tr id="authViolFAid85" style="display:none">
+<td bgcolor="#F5F5F5" style="padding-left:10px">&nbsp;</td>
+<!--bd_legend_required_marker-->
+<td bgcolor="#F5F5F5"></td>
+<td bgcolor="#F5F5F5" style="padding-right:10px;" colspan="2">
+<table width="100%" style="table-layout:fixed">
+<tr>
+<td><pre style="margin:0px;"><font color="gray">ecu_sim.c&nbsp;(103):&nbsp;</font><font color="gray">int selected_idx = rand() % MAX_VINS;</font>
+<font color="gray">ecu_sim.c&nbsp;(104):&nbsp;</font><font color="gray">VehicleInfo* vehicle = &amp;vehicles[selected_idx];</font>
+<font color="gray">ecu_sim.c&nbsp;(106):&nbsp;</font><font color="gray">strcpy(current_vin, vehicle-&gt;vin);</font>
+<font color="gray">ecu_sim.c&nbsp;(107):&nbsp;</font><font color="gray">current_ecu_type = vehicle-&gt;ecu_type;</font>
+<font color="gray">ecu_sim.c&nbsp;(108):&nbsp;</font><font color="gray">current_min_license = vehicle-&gt;min_license_grade;</font>
+<font color="gray">ecu_sim.c&nbsp;(110):&nbsp;</font><font color="gray">printf("VIN: %s, ECU: %s, allowed_maps: ",</font>
+<font color="gray">ecu_sim.c&nbsp;(112):&nbsp;</font><font color="gray">current_ecu_type == ECU_ROAD ? "ROAD" : "RACE");</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (current_ecu_type == 0) (assuming true)</font>
+<font color="gray">ecu_sim.c&nbsp;(110):&nbsp;</font><font color="gray">printf("VIN: %s, ECU: %s, allowed_maps: ",</font>
+<font color="gray">ecu_sim.c&nbsp;(114):&nbsp;</font><font color="gray">int i;</font>
+<font color="gray">ecu_sim.c&nbsp;(115):&nbsp;</font><font color="gray">for (i = 0; i &lt; vehicle-&gt;num_allowed_maps; i++) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Loop condition evaluation: (i &lt; vehicle-&gt;num_allowed_maps) (assuming false)</font><font color="green">&nbsp;&nbsp;***&nbsp;Not entering the loop</font>
+<font color="gray">ecu_sim.c&nbsp;(121):&nbsp;</font><font color="gray">printf("\n");</font>
+<font color="#1569C7"><b>Method call</b>
+</font><font color="#B71C1C"><b>Point by which returned value should be checked</b>&nbsp;
+</font><font color="#B71C1C">ecu_sim.c&nbsp;(122):&nbsp;</font><font color="black">fflush(stdout);</font><font color="green"></font><font color="green"></font></pre></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">125:&nbsp;</font></td>
+<td>Function 'cmd_get_allowed_maps' has external linkage and is not declared in the header</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL15-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">127:&nbsp;</font></td>
+<td>Unused function's "printf" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">128:&nbsp;</font></td>
+<td>The 'fflush' library function should not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR02-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">128:&nbsp;</font></td>
+<td>The value returned by the POSIX library function 'fflush' should be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">128:&nbsp;</font></td>
+<td>The value returned by the standard library function 'fflush' should be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">128:&nbsp;</font></td>
+<td>Unused function's "fflush" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr id="authViolFAid93H" style="cursor:pointer" onclick="javascript:expandViolation('authViolFAid93H','authViolFAid93', '0')">
+<td width="1%" align="right" style="padding-left:10px">&nbsp;<font class="#000000"><span>+</span></font>&nbsp;
+</td>
+<td width="2%" align="right"><font class="gray">128:&nbsp;</font></td>
+<td>Value returned from method "fflush" should be checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-d-1</font></td>
+</tr>
+<tr id="authViolFAid93" style="display:none">
+<td bgcolor="#F5F5F5" style="padding-left:10px">&nbsp;</td>
+<!--bd_legend_required_marker-->
+<td bgcolor="#F5F5F5"></td>
+<td bgcolor="#F5F5F5" style="padding-right:10px;" colspan="2">
+<table width="100%" style="table-layout:fixed">
+<tr>
+<td><pre style="margin:0px;"><font color="gray">ecu_sim.c&nbsp;(126):&nbsp;</font><font color="gray">if (current_vin[0] == '\0') {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (current_vin[0] == 0) (assuming true)</font>
+<font color="gray">ecu_sim.c&nbsp;(127):&nbsp;</font><font color="gray">printf("ERROR: No vehicle identified\n");</font>
+<font color="#1569C7"><b>Method call</b>
+</font><font color="#B71C1C"><b>Point by which returned value should be checked</b>&nbsp;
+</font><font color="#B71C1C">ecu_sim.c&nbsp;(128):&nbsp;</font><font color="black">fflush(stdout);</font><font color="green"></font><font color="green"></font></pre></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">141:&nbsp;</font></td>
+<td>Test of a value against zero should be made explicit</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP20-b-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">142:&nbsp;</font></td>
+<td>Unused function's "printf" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">144:&nbsp;</font></td>
+<td>Unused function's "printf" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">145:&nbsp;</font></td>
+<td>Use parenthesis to clarify order ('-' is the second operand of '&lt;')</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">146:&nbsp;</font></td>
+<td>Unused function's "printf" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">149:&nbsp;</font></td>
+<td>Unused function's "printf" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">150:&nbsp;</font></td>
+<td>The 'fflush' library function should not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR02-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">150:&nbsp;</font></td>
+<td>The value returned by the POSIX library function 'fflush' should be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">150:&nbsp;</font></td>
+<td>The value returned by the standard library function 'fflush' should be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">150:&nbsp;</font></td>
+<td>Unused function's "fflush" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr id="authViolFAid105H" style="cursor:pointer" onclick="javascript:expandViolation('authViolFAid105H','authViolFAid105', '0')">
+<td width="1%" align="right" style="padding-left:10px">&nbsp;<font class="#000000"><span>+</span></font>&nbsp;
+</td>
+<td width="2%" align="right"><font class="gray">150:&nbsp;</font></td>
+<td>Value returned from method "fflush" should be checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-d-1</font></td>
+</tr>
+<tr id="authViolFAid105" style="display:none">
+<td bgcolor="#F5F5F5" style="padding-left:10px">&nbsp;</td>
+<!--bd_legend_required_marker-->
+<td bgcolor="#F5F5F5"></td>
+<td bgcolor="#F5F5F5" style="padding-right:10px;" colspan="2">
+<table width="100%" style="table-layout:fixed">
+<tr>
+<td><pre style="margin:0px;"><font color="gray">ecu_sim.c&nbsp;(126):&nbsp;</font><font color="gray">if (current_vin[0] == '\0') {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (current_vin[0] == 0) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(132):&nbsp;</font><font color="gray">VehicleInfo* vehicle = NULL;</font>
+<font color="gray">ecu_sim.c&nbsp;(133):&nbsp;</font><font color="gray">int i;</font>
+<font color="gray">ecu_sim.c&nbsp;(134):&nbsp;</font><font color="gray">for (i = 0; i &lt; MAX_VINS; i++) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Loop condition evaluation: (i &lt; 3) (true)</font><font color="green">&nbsp;&nbsp;***&nbsp;Entering the loop</font>
+<font color="gray">ecu_sim.c&nbsp;(135):&nbsp;</font><font color="gray">if (strcmp(vehicles[i].vin, current_vin) == 0) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (strcmp(...) == 0) (assuming true)</font>
+<font color="gray">ecu_sim.c&nbsp;(136):&nbsp;</font><font color="gray">vehicle = &amp;vehicles[i];</font>
+<font color="gray">ecu_sim.c&nbsp;(137):&nbsp;</font><font color="gray">break;</font><font color="green">&nbsp;&nbsp;***&nbsp;Exit the loop</font>
+<font color="gray">ecu_sim.c&nbsp;(141):&nbsp;</font><font color="gray">if (vehicle) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (vehicle != 0) (true)</font>
+<font color="gray">ecu_sim.c&nbsp;(142):&nbsp;</font><font color="gray">printf("ALLOWED_MAPS: ");</font>
+<font color="gray">ecu_sim.c&nbsp;(143):&nbsp;</font><font color="gray">for (i = 0; i &lt; vehicle-&gt;num_allowed_maps; i++) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Loop condition evaluation: (i &lt; vehicle-&gt;num_allowed_maps) (assuming false)</font><font color="green">&nbsp;&nbsp;***&nbsp;Not entering the loop</font>
+<font color="gray">ecu_sim.c&nbsp;(149):&nbsp;</font><font color="gray">printf("\n");</font>
+<font color="#1569C7"><b>Method call</b>
+</font><font color="#B71C1C"><b>Point by which returned value should be checked</b>&nbsp;
+</font><font color="#B71C1C">ecu_sim.c&nbsp;(150):&nbsp;</font><font color="black">fflush(stdout);</font><font color="green"></font><font color="green"></font></pre></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">154:&nbsp;</font></td>
+<td>Function 'flash_map' has external linkage and is not declared in the header</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL15-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">154:&nbsp;</font></td>
+<td>Parameter 'map_id' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">156:&nbsp;</font></td>
+<td>Unused function's "printf" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">157:&nbsp;</font></td>
+<td>The 'fflush' library function should not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR02-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">157:&nbsp;</font></td>
+<td>The value returned by the POSIX library function 'fflush' should be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">157:&nbsp;</font></td>
+<td>The value returned by the standard library function 'fflush' should be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">157:&nbsp;</font></td>
+<td>Unused function's "fflush" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr id="authViolFAid114H" style="cursor:pointer" onclick="javascript:expandViolation('authViolFAid114H','authViolFAid114', '0')">
+<td width="1%" align="right" style="padding-left:10px">&nbsp;<font class="#000000"><span>+</span></font>&nbsp;
+</td>
+<td width="2%" align="right"><font class="gray">157:&nbsp;</font></td>
+<td>Value returned from method "fflush" should be checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-d-1</font></td>
+</tr>
+<tr id="authViolFAid114" style="display:none">
+<td bgcolor="#F5F5F5" style="padding-left:10px">&nbsp;</td>
+<!--bd_legend_required_marker-->
+<td bgcolor="#F5F5F5"></td>
+<td bgcolor="#F5F5F5" style="padding-right:10px;" colspan="2">
+<table width="100%" style="table-layout:fixed">
+<tr>
+<td><pre style="margin:0px;"><font color="gray">ecu_sim.c&nbsp;(155):&nbsp;</font><font color="gray">if (current_vin[0] == '\0') {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (current_vin[0] == 0) (assuming true)</font>
+<font color="gray">ecu_sim.c&nbsp;(156):&nbsp;</font><font color="gray">printf("ERROR: No vehicle identified. Use IDENTIFY first.\n");</font>
+<font color="#1569C7"><b>Method call</b>
+</font><font color="#B71C1C"><b>Point by which returned value should be checked</b>&nbsp;
+</font><font color="#B71C1C">ecu_sim.c&nbsp;(157):&nbsp;</font><font color="black">fflush(stdout);</font><font color="green"></font><font color="green"></font></pre></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">163:&nbsp;</font></td>
+<td>Unused function's "printf" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">164:&nbsp;</font></td>
+<td>The 'fflush' library function should not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR02-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">164:&nbsp;</font></td>
+<td>The value returned by the POSIX library function 'fflush' should be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">164:&nbsp;</font></td>
+<td>The value returned by the standard library function 'fflush' should be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">164:&nbsp;</font></td>
+<td>Unused function's "fflush" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr id="authViolFAid121H" style="cursor:pointer" onclick="javascript:expandViolation('authViolFAid121H','authViolFAid121', '0')">
+<td width="1%" align="right" style="padding-left:10px">&nbsp;<font class="#000000"><span>+</span></font>&nbsp;
+</td>
+<td width="2%" align="right"><font class="gray">164:&nbsp;</font></td>
+<td>Value returned from method "fflush" should be checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-d-1</font></td>
+</tr>
+<tr id="authViolFAid121" style="display:none">
+<td bgcolor="#F5F5F5" style="padding-left:10px">&nbsp;</td>
+<!--bd_legend_required_marker-->
+<td bgcolor="#F5F5F5"></td>
+<td bgcolor="#F5F5F5" style="padding-right:10px;" colspan="2">
+<table width="100%" style="table-layout:fixed">
+<tr>
+<td><pre style="margin:0px;"><font color="gray">ecu_sim.c&nbsp;(155):&nbsp;</font><font color="gray">if (current_vin[0] == '\0') {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (current_vin[0] == 0) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(161):&nbsp;</font><font color="gray">IgnitionMap* map = find_map(map_id);</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(83):&nbsp;</font><font color="gray">int i;</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(84):&nbsp;</font><font color="gray">for (i = 0; i &lt; MAX_MAPS; i++) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Loop condition evaluation: (i &lt; 6) (assuming true)</font><font color="green">&nbsp;&nbsp;***&nbsp;Entering the loop</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(85):&nbsp;</font><font color="gray">if (strcmp(maps[i].id, map_id) == 0) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (strcmp(...) == 0) (assuming false)</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(84):&nbsp;</font><font color="gray">for (i = 0; i &lt; MAX_MAPS; i++) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Loop condition evaluation: (i &lt; 6) (assuming false)</font><font color="green">&nbsp;&nbsp;***&nbsp;Not entering the loop</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(89):&nbsp;</font><font color="gray">return NULL;</font>
+<font color="gray">ecu_sim.c&nbsp;(162):&nbsp;</font><font color="gray">if (map == NULL) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (map == 0) (assuming true)</font>
+<font color="gray">ecu_sim.c&nbsp;(163):&nbsp;</font><font color="gray">printf("ERROR: Unknown map ID '%s'\n", map_id);</font>
+<font color="#1569C7"><b>Method call</b>
+</font><font color="#B71C1C"><b>Point by which returned value should be checked</b>&nbsp;
+</font><font color="#B71C1C">ecu_sim.c&nbsp;(164):&nbsp;</font><font color="black">fflush(stdout);</font><font color="green"></font><font color="green"></font></pre></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">177:&nbsp;</font></td>
+<td>Unused function's "printf" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">178:&nbsp;</font></td>
+<td>The 'fflush' library function should not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR02-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">178:&nbsp;</font></td>
+<td>The value returned by the POSIX library function 'fflush' should be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">178:&nbsp;</font></td>
+<td>The value returned by the standard library function 'fflush' should be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">178:&nbsp;</font></td>
+<td>Unused function's "fflush" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr id="authViolFAid128H" style="cursor:pointer" onclick="javascript:expandViolation('authViolFAid128H','authViolFAid128', '0')">
+<td width="1%" align="right" style="padding-left:10px">&nbsp;<font class="#000000"><span>+</span></font>&nbsp;
+</td>
+<td width="2%" align="right"><font class="gray">178:&nbsp;</font></td>
+<td>Value returned from method "fflush" should be checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-d-1</font></td>
+</tr>
+<tr id="authViolFAid128" style="display:none">
+<td bgcolor="#F5F5F5" style="padding-left:10px">&nbsp;</td>
+<!--bd_legend_required_marker-->
+<td bgcolor="#F5F5F5"></td>
+<td bgcolor="#F5F5F5" style="padding-right:10px;" colspan="2">
+<table width="100%" style="table-layout:fixed">
+<tr>
+<td><pre style="margin:0px;"><font color="gray">ecu_sim.c&nbsp;(155):&nbsp;</font><font color="gray">if (current_vin[0] == '\0') {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (current_vin[0] == 0) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(161):&nbsp;</font><font color="gray">IgnitionMap* map = find_map(map_id);</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(83):&nbsp;</font><font color="gray">int i;</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(84):&nbsp;</font><font color="gray">for (i = 0; i &lt; MAX_MAPS; i++) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Loop condition evaluation: (i &lt; 6) (assuming true)</font><font color="green">&nbsp;&nbsp;***&nbsp;Entering the loop</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(85):&nbsp;</font><font color="gray">if (strcmp(maps[i].id, map_id) == 0) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (strcmp(...) == 0) (assuming true)</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(86):&nbsp;</font><font color="gray">return &amp;maps[i];</font>
+<font color="gray">ecu_sim.c&nbsp;(162):&nbsp;</font><font color="gray">if (map == NULL) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (map == 0) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(168):&nbsp;</font><font color="gray">VehicleInfo* vehicle = NULL;</font>
+<font color="gray">ecu_sim.c&nbsp;(169):&nbsp;</font><font color="gray">int i;</font>
+<font color="gray">ecu_sim.c&nbsp;(170):&nbsp;</font><font color="gray">for (i = 0; i &lt; MAX_VINS; i++) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Loop condition evaluation: (i &lt; 3) (assuming true)</font><font color="green">&nbsp;&nbsp;***&nbsp;Entering the loop</font>
+<font color="gray">ecu_sim.c&nbsp;(171):&nbsp;</font><font color="gray">if (strcmp(vehicles[i].vin, current_vin) == 0) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (strcmp(...) == 0) (assuming true)</font>
+<font color="gray">ecu_sim.c&nbsp;(172):&nbsp;</font><font color="gray">vehicle = &amp;vehicles[i];</font>
+<font color="gray">ecu_sim.c&nbsp;(173):&nbsp;</font><font color="gray">break;</font><font color="green">&nbsp;&nbsp;***&nbsp;Exit the loop</font>
+<font color="gray">ecu_sim.c&nbsp;(177):&nbsp;</font><font color="gray">printf("PROMPT: Re-enter VIN from motorcycle documents for verification:\n");</font>
+<font color="#1569C7"><b>Method call</b>
+</font><font color="#B71C1C"><b>Point by which returned value should be checked</b>&nbsp;
+</font><font color="#B71C1C">ecu_sim.c&nbsp;(178):&nbsp;</font><font color="black">fflush(stdout);</font><font color="green"></font><font color="green"></font></pre></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">180:&nbsp;</font></td>
+<td>The 'scanf' library function should not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR02-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">180:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: %d</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">180:&nbsp;</font></td>
+<td>The value returned by the POSIX library function 'scanf' should be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">180:&nbsp;</font></td>
+<td>The value returned by the standard library function 'scanf' should be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">180:&nbsp;</font></td>
+<td>Unsafe string function 'scanf' is being used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-STR07-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">180:&nbsp;</font></td>
+<td>Unsafe string function 'scanf' is being used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-INT05-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">180:&nbsp;</font></td>
+<td>Unused function's "scanf" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr id="authViolFAid137H" style="cursor:pointer" onclick="javascript:expandViolation('authViolFAid137H','authViolFAid137', '0')">
+<td width="1%" align="right" style="padding-left:10px">&nbsp;<font class="#000000"><span>+</span></font>&nbsp;
+</td>
+<td width="2%" align="right"><font class="gray">180:&nbsp;</font></td>
+<td>Value returned from method "scanf" should be checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-d-1</font></td>
+</tr>
+<tr id="authViolFAid137" style="display:none">
+<td bgcolor="#F5F5F5" style="padding-left:10px">&nbsp;</td>
+<!--bd_legend_required_marker-->
+<td bgcolor="#F5F5F5"></td>
+<td bgcolor="#F5F5F5" style="padding-right:10px;" colspan="2">
+<table width="100%" style="table-layout:fixed">
+<tr>
+<td><pre style="margin:0px;"><font color="gray">ecu_sim.c&nbsp;(155):&nbsp;</font><font color="gray">if (current_vin[0] == '\0') {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (current_vin[0] == 0) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(161):&nbsp;</font><font color="gray">IgnitionMap* map = find_map(map_id);</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(83):&nbsp;</font><font color="gray">int i;</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(84):&nbsp;</font><font color="gray">for (i = 0; i &lt; MAX_MAPS; i++) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Loop condition evaluation: (i &lt; 6) (assuming true)</font><font color="green">&nbsp;&nbsp;***&nbsp;Entering the loop</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(85):&nbsp;</font><font color="gray">if (strcmp(maps[i].id, map_id) == 0) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (strcmp(...) == 0) (assuming true)</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(86):&nbsp;</font><font color="gray">return &amp;maps[i];</font>
+<font color="gray">ecu_sim.c&nbsp;(162):&nbsp;</font><font color="gray">if (map == NULL) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (map == 0) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(168):&nbsp;</font><font color="gray">VehicleInfo* vehicle = NULL;</font>
+<font color="gray">ecu_sim.c&nbsp;(169):&nbsp;</font><font color="gray">int i;</font>
+<font color="gray">ecu_sim.c&nbsp;(170):&nbsp;</font><font color="gray">for (i = 0; i &lt; MAX_VINS; i++) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Loop condition evaluation: (i &lt; 3) (assuming true)</font><font color="green">&nbsp;&nbsp;***&nbsp;Entering the loop</font>
+<font color="gray">ecu_sim.c&nbsp;(171):&nbsp;</font><font color="gray">if (strcmp(vehicles[i].vin, current_vin) == 0) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (strcmp(...) == 0) (assuming true)</font>
+<font color="gray">ecu_sim.c&nbsp;(172):&nbsp;</font><font color="gray">vehicle = &amp;vehicles[i];</font>
+<font color="gray">ecu_sim.c&nbsp;(173):&nbsp;</font><font color="gray">break;</font><font color="green">&nbsp;&nbsp;***&nbsp;Exit the loop</font>
+<font color="gray">ecu_sim.c&nbsp;(177):&nbsp;</font><font color="gray">printf("PROMPT: Re-enter VIN from motorcycle documents for verification:\n");</font>
+<font color="gray">ecu_sim.c&nbsp;(178):&nbsp;</font><font color="gray">fflush(stdout);</font>
+<font color="#1569C7"><b>Method call</b>
+</font><font color="#B71C1C"><b>Point by which returned value should be checked</b>&nbsp;
+</font><font color="#B71C1C">ecu_sim.c&nbsp;(180):&nbsp;</font><font color="black">scanf("%d", &amp;vin_verification);</font><font color="green"></font><font color="green"></font></pre></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">182:&nbsp;</font></td>
+<td>Declare local variable 'current_vin_num' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">182:&nbsp;</font></td>
+<td>Do not use the 'atoi' function</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR34-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">182:&nbsp;</font></td>
+<td>Do not use the 'atoi' function</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC24-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">182:&nbsp;</font></td>
+<td>Do not use the 'atoi' function</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">185:&nbsp;</font></td>
+<td>The right hand operand of the logical operator '&amp;&amp;' should have essentially Boolean type</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-INT31-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">185:&nbsp;</font></td>
+<td>Use parenthesis to clarify order ('==' is the first operand of '&amp;&amp;')</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">186:&nbsp;</font></td>
+<td>Unused function's "printf" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">187:&nbsp;</font></td>
+<td>The 'fflush' library function should not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR02-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">187:&nbsp;</font></td>
+<td>The value returned by the POSIX library function 'fflush' should be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">187:&nbsp;</font></td>
+<td>The value returned by the standard library function 'fflush' should be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">187:&nbsp;</font></td>
+<td>Unused function's "fflush" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr id="authViolFAid150H" style="cursor:pointer" onclick="javascript:expandViolation('authViolFAid150H','authViolFAid150', '0')">
+<td width="1%" align="right" style="padding-left:10px">&nbsp;<font class="#000000"><span>+</span></font>&nbsp;
+</td>
+<td width="2%" align="right"><font class="gray">187:&nbsp;</font></td>
+<td>Value returned from method "fflush" should be checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-d-1</font></td>
+</tr>
+<tr id="authViolFAid150" style="display:none">
+<td bgcolor="#F5F5F5" style="padding-left:10px">&nbsp;</td>
+<!--bd_legend_required_marker-->
+<td bgcolor="#F5F5F5"></td>
+<td bgcolor="#F5F5F5" style="padding-right:10px;" colspan="2">
+<table width="100%" style="table-layout:fixed">
+<tr>
+<td><pre style="margin:0px;"><font color="gray">ecu_sim.c&nbsp;(155):&nbsp;</font><font color="gray">if (current_vin[0] == '\0') {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (current_vin[0] == 0) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(161):&nbsp;</font><font color="gray">IgnitionMap* map = find_map(map_id);</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(83):&nbsp;</font><font color="gray">int i;</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(84):&nbsp;</font><font color="gray">for (i = 0; i &lt; MAX_MAPS; i++) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Loop condition evaluation: (i &lt; 6) (assuming true)</font><font color="green">&nbsp;&nbsp;***&nbsp;Entering the loop</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(85):&nbsp;</font><font color="gray">if (strcmp(maps[i].id, map_id) == 0) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (strcmp(...) == 0) (assuming true)</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(86):&nbsp;</font><font color="gray">return &amp;maps[i];</font>
+<font color="gray">ecu_sim.c&nbsp;(162):&nbsp;</font><font color="gray">if (map == NULL) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (map == 0) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(168):&nbsp;</font><font color="gray">VehicleInfo* vehicle = NULL;</font>
+<font color="gray">ecu_sim.c&nbsp;(169):&nbsp;</font><font color="gray">int i;</font>
+<font color="gray">ecu_sim.c&nbsp;(170):&nbsp;</font><font color="gray">for (i = 0; i &lt; MAX_VINS; i++) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Loop condition evaluation: (i &lt; 3) (assuming true)</font><font color="green">&nbsp;&nbsp;***&nbsp;Entering the loop</font>
+<font color="gray">ecu_sim.c&nbsp;(171):&nbsp;</font><font color="gray">if (strcmp(vehicles[i].vin, current_vin) == 0) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (strcmp(...) == 0) (assuming true)</font>
+<font color="gray">ecu_sim.c&nbsp;(172):&nbsp;</font><font color="gray">vehicle = &amp;vehicles[i];</font>
+<font color="gray">ecu_sim.c&nbsp;(173):&nbsp;</font><font color="gray">break;</font><font color="green">&nbsp;&nbsp;***&nbsp;Exit the loop</font>
+<font color="gray">ecu_sim.c&nbsp;(177):&nbsp;</font><font color="gray">printf("PROMPT: Re-enter VIN from motorcycle documents for verification:\n");</font>
+<font color="gray">ecu_sim.c&nbsp;(178):&nbsp;</font><font color="gray">fflush(stdout);</font>
+<font color="gray">ecu_sim.c&nbsp;(180):&nbsp;</font><font color="gray">scanf("%d", &amp;vin_verification);</font>
+<font color="gray">ecu_sim.c&nbsp;(182):&nbsp;</font><font color="gray">int current_vin_num = atoi(current_vin);</font>
+<font color="gray">ecu_sim.c&nbsp;(184):&nbsp;</font><font color="gray">if (vin_verification == current_vin_num) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (vin_verification == current_vin_num) (assuming true)</font>
+<font color="gray">ecu_sim.c&nbsp;(185):&nbsp;</font><font color="gray">if (current_ecu_type == ECU_ROAD &amp;&amp; map-&gt;is_race_map) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (current_ecu_type == 0) (assuming true)</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (map-&gt;is_race_map != 0) (assuming true)</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: current_ecu_type == ECU_ROAD &amp;&amp; map-&gt;is_race_map (assuming true)</font>
+<font color="gray">ecu_sim.c&nbsp;(186):&nbsp;</font><font color="gray">printf("ERROR: Race maps not allowed on ROAD ECUs (regulatory violation)\n");</font>
+<font color="#1569C7"><b>Method call</b>
+</font><font color="#B71C1C"><b>Point by which returned value should be checked</b>&nbsp;
+</font><font color="#B71C1C">ecu_sim.c&nbsp;(187):&nbsp;</font><font color="black">fflush(stdout);</font><font color="green"></font><font color="green"></font></pre></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">190:&nbsp;</font></td>
+<td>Do not use the literal constant '100000'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL06-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">190:&nbsp;</font></td>
+<td>Do not use the literal constant '999999'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL06-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">190:&nbsp;</font></td>
+<td>Provide 'else' after the last 'else-if' construct</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC01-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">190:&nbsp;</font></td>
+<td>Use parenthesis to clarify order ('&lt;=' is the second operand of '&amp;&amp;')</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">190:&nbsp;</font></td>
+<td>Use parenthesis to clarify order ('&gt;=' is the first operand of '&amp;&amp;')</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">191:&nbsp;</font></td>
+<td>Unused function's "printf" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">192:&nbsp;</font></td>
+<td>The 'fflush' library function should not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR02-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">192:&nbsp;</font></td>
+<td>The value returned by the POSIX library function 'fflush' should be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">192:&nbsp;</font></td>
+<td>The value returned by the standard library function 'fflush' should be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">192:&nbsp;</font></td>
+<td>Unused function's "fflush" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr id="authViolFAid162H" style="cursor:pointer" onclick="javascript:expandViolation('authViolFAid162H','authViolFAid162', '0')">
+<td width="1%" align="right" style="padding-left:10px">&nbsp;<font class="#000000"><span>+</span></font>&nbsp;
+</td>
+<td width="2%" align="right"><font class="gray">192:&nbsp;</font></td>
+<td>Value returned from method "fflush" should be checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-d-1</font></td>
+</tr>
+<tr id="authViolFAid162" style="display:none">
+<td bgcolor="#F5F5F5" style="padding-left:10px">&nbsp;</td>
+<!--bd_legend_required_marker-->
+<td bgcolor="#F5F5F5"></td>
+<td bgcolor="#F5F5F5" style="padding-right:10px;" colspan="2">
+<table width="100%" style="table-layout:fixed">
+<tr>
+<td><pre style="margin:0px;"><font color="gray">ecu_sim.c&nbsp;(155):&nbsp;</font><font color="gray">if (current_vin[0] == '\0') {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (current_vin[0] == 0) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(161):&nbsp;</font><font color="gray">IgnitionMap* map = find_map(map_id);</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(83):&nbsp;</font><font color="gray">int i;</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(84):&nbsp;</font><font color="gray">for (i = 0; i &lt; MAX_MAPS; i++) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Loop condition evaluation: (i &lt; 6) (assuming true)</font><font color="green">&nbsp;&nbsp;***&nbsp;Entering the loop</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(85):&nbsp;</font><font color="gray">if (strcmp(maps[i].id, map_id) == 0) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (strcmp(...) == 0) (assuming true)</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(86):&nbsp;</font><font color="gray">return &amp;maps[i];</font>
+<font color="gray">ecu_sim.c&nbsp;(162):&nbsp;</font><font color="gray">if (map == NULL) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (map == 0) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(168):&nbsp;</font><font color="gray">VehicleInfo* vehicle = NULL;</font>
+<font color="gray">ecu_sim.c&nbsp;(169):&nbsp;</font><font color="gray">int i;</font>
+<font color="gray">ecu_sim.c&nbsp;(170):&nbsp;</font><font color="gray">for (i = 0; i &lt; MAX_VINS; i++) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Loop condition evaluation: (i &lt; 3) (assuming true)</font><font color="green">&nbsp;&nbsp;***&nbsp;Entering the loop</font>
+<font color="gray">ecu_sim.c&nbsp;(171):&nbsp;</font><font color="gray">if (strcmp(vehicles[i].vin, current_vin) == 0) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (strcmp(...) == 0) (assuming true)</font>
+<font color="gray">ecu_sim.c&nbsp;(172):&nbsp;</font><font color="gray">vehicle = &amp;vehicles[i];</font>
+<font color="gray">ecu_sim.c&nbsp;(173):&nbsp;</font><font color="gray">break;</font><font color="green">&nbsp;&nbsp;***&nbsp;Exit the loop</font>
+<font color="gray">ecu_sim.c&nbsp;(177):&nbsp;</font><font color="gray">printf("PROMPT: Re-enter VIN from motorcycle documents for verification:\n");</font>
+<font color="gray">ecu_sim.c&nbsp;(178):&nbsp;</font><font color="gray">fflush(stdout);</font>
+<font color="gray">ecu_sim.c&nbsp;(180):&nbsp;</font><font color="gray">scanf("%d", &amp;vin_verification);</font>
+<font color="gray">ecu_sim.c&nbsp;(182):&nbsp;</font><font color="gray">int current_vin_num = atoi(current_vin);</font>
+<font color="gray">ecu_sim.c&nbsp;(184):&nbsp;</font><font color="gray">if (vin_verification == current_vin_num) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (vin_verification == current_vin_num) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(190):&nbsp;</font><font color="gray">} else if (vin_verification &gt;= 100000 &amp;&amp; vin_verification &lt;= 999999) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (vin_verification &gt;= 100000) (assuming true)</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (vin_verification &lt;= 999999) (assuming true)</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: vin_verification &gt;= 100000 &amp;&amp; vin_verification &lt;= 999999 (assuming true)</font>
+<font color="gray">ecu_sim.c&nbsp;(191):&nbsp;</font><font color="gray">printf("ERROR: VIN mismatch. Please try again.\n");</font>
+<font color="#1569C7"><b>Method call</b>
+</font><font color="#B71C1C"><b>Point by which returned value should be checked</b>&nbsp;
+</font><font color="#B71C1C">ecu_sim.c&nbsp;(192):&nbsp;</font><font color="black">fflush(stdout);</font><font color="green"></font><font color="green"></font></pre></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">196:&nbsp;</font></td>
+<td>The operand of the logical negation operator '!' should have essentially Boolean type</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-INT31-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">197:&nbsp;</font></td>
+<td>Unused function's "printf" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">200:&nbsp;</font></td>
+<td>Unused function's "printf" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">202:&nbsp;</font></td>
+<td>The 'fflush' library function should not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR02-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">202:&nbsp;</font></td>
+<td>The value returned by the POSIX library function 'fflush' should be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">202:&nbsp;</font></td>
+<td>The value returned by the standard library function 'fflush' should be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">202:&nbsp;</font></td>
+<td>Unused function's "fflush" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr id="authViolFAid171H" style="cursor:pointer" onclick="javascript:expandViolation('authViolFAid171H','authViolFAid171', '0')">
+<td width="1%" align="right" style="padding-left:10px">&nbsp;<font class="#000000"><span>+</span></font>&nbsp;
+</td>
+<td width="2%" align="right"><font class="gray">202:&nbsp;</font></td>
+<td>Value returned from method "fflush" should be checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-d-1</font></td>
+</tr>
+<tr id="authViolFAid171" style="display:none">
+<td bgcolor="#F5F5F5" style="padding-left:10px">&nbsp;</td>
+<!--bd_legend_required_marker-->
+<td bgcolor="#F5F5F5"></td>
+<td bgcolor="#F5F5F5" style="padding-right:10px;" colspan="2">
+<table width="100%" style="table-layout:fixed">
+<tr>
+<td><pre style="margin:0px;"><font color="gray">ecu_sim.c&nbsp;(155):&nbsp;</font><font color="gray">if (current_vin[0] == '\0') {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (current_vin[0] == 0) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(161):&nbsp;</font><font color="gray">IgnitionMap* map = find_map(map_id);</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(83):&nbsp;</font><font color="gray">int i;</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(84):&nbsp;</font><font color="gray">for (i = 0; i &lt; MAX_MAPS; i++) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Loop condition evaluation: (i &lt; 6) (assuming true)</font><font color="green">&nbsp;&nbsp;***&nbsp;Entering the loop</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(85):&nbsp;</font><font color="gray">if (strcmp(maps[i].id, map_id) == 0) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (strcmp(...) == 0) (assuming true)</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(86):&nbsp;</font><font color="gray">return &amp;maps[i];</font>
+<font color="gray">ecu_sim.c&nbsp;(162):&nbsp;</font><font color="gray">if (map == NULL) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (map == 0) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(168):&nbsp;</font><font color="gray">VehicleInfo* vehicle = NULL;</font>
+<font color="gray">ecu_sim.c&nbsp;(169):&nbsp;</font><font color="gray">int i;</font>
+<font color="gray">ecu_sim.c&nbsp;(170):&nbsp;</font><font color="gray">for (i = 0; i &lt; MAX_VINS; i++) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Loop condition evaluation: (i &lt; 3) (assuming true)</font><font color="green">&nbsp;&nbsp;***&nbsp;Entering the loop</font>
+<font color="gray">ecu_sim.c&nbsp;(171):&nbsp;</font><font color="gray">if (strcmp(vehicles[i].vin, current_vin) == 0) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (strcmp(...) == 0) (assuming true)</font>
+<font color="gray">ecu_sim.c&nbsp;(172):&nbsp;</font><font color="gray">vehicle = &amp;vehicles[i];</font>
+<font color="gray">ecu_sim.c&nbsp;(173):&nbsp;</font><font color="gray">break;</font><font color="green">&nbsp;&nbsp;***&nbsp;Exit the loop</font>
+<font color="gray">ecu_sim.c&nbsp;(177):&nbsp;</font><font color="gray">printf("PROMPT: Re-enter VIN from motorcycle documents for verification:\n");</font>
+<font color="gray">ecu_sim.c&nbsp;(178):&nbsp;</font><font color="gray">fflush(stdout);</font>
+<font color="gray">ecu_sim.c&nbsp;(180):&nbsp;</font><font color="gray">scanf("%d", &amp;vin_verification);</font>
+<font color="gray">ecu_sim.c&nbsp;(182):&nbsp;</font><font color="gray">int current_vin_num = atoi(current_vin);</font>
+<font color="gray">ecu_sim.c&nbsp;(184):&nbsp;</font><font color="gray">if (vin_verification == current_vin_num) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (vin_verification == current_vin_num) (assuming true)</font>
+<font color="gray">ecu_sim.c&nbsp;(185):&nbsp;</font><font color="gray">if (current_ecu_type == ECU_ROAD &amp;&amp; map-&gt;is_race_map) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (current_ecu_type == 0) (assuming false)</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: current_ecu_type == ECU_ROAD &amp;&amp; map-&gt;is_race_map (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(196):&nbsp;</font><font color="gray">is_map_allowed_for_vin(...)</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(93):&nbsp;</font><font color="gray">int i;</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(94):&nbsp;</font><font color="gray">for (i = 0; i &lt; vehicle-&gt;num_allowed_maps; i++) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Loop condition evaluation: (i &lt; vehicle-&gt;num_allowed_maps) (assuming false)</font><font color="green">&nbsp;&nbsp;***&nbsp;Not entering the loop</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(99):&nbsp;</font><font color="gray">return 0;</font>
+<font color="gray">ecu_sim.c&nbsp;(196):&nbsp;</font><font color="gray">if (!is_map_allowed_for_vin(map_id, vehicle)) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: !is_map_allowed_for_vin(map_id, vehicle) (assuming true)</font>
+<font color="gray">ecu_sim.c&nbsp;(197):&nbsp;</font><font color="gray">printf("WARNING: Map not in standard allowed list for this VIN\n");</font>
+<font color="gray">ecu_sim.c&nbsp;(200):&nbsp;</font><font color="gray">printf("SUCCESS: Map '%s' (%s, %dHP) flashed to VIN %s\n",</font>
+<font color="#1569C7"><b>Method call</b>
+</font><font color="#B71C1C"><b>Point by which returned value should be checked</b>&nbsp;
+</font><font color="#B71C1C">ecu_sim.c&nbsp;(202):&nbsp;</font><font color="black">fflush(stdout);</font><font color="green"></font><font color="green"></font></pre></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>Declare parameter 'command' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-b-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>Function 'process_command' has external linkage and is not declared in the header</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL15-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>Parameter 'command' is not validated before use</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">205:&nbsp;</font></td>
+<td>Pass parameter "command" with const specifier</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL13-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">209:&nbsp;</font></td>
+<td>Declare local variable 'num_tokens' as const</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL00-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">209:&nbsp;</font></td>
+<td>The 'sscanf' library function should not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR02-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">209:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: %s %s</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">209:&nbsp;</font></td>
+<td>Unsafe string function 'sscanf' is being used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-STR07-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">209:&nbsp;</font></td>
+<td>Unsafe string function 'sscanf' is being used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-INT05-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">211:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: IDENTIFY</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">212:&nbsp;</font></td>
+<td>Prototype of function 'cmd_identify' does not precede function call</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP37-d-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">213:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: GET_ALLOWED_MAPS</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">214:&nbsp;</font></td>
+<td>Prototype of function 'cmd_get_allowed_maps' does not precede function call</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP37-d-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">215:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: FLASH_MAP</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">216:&nbsp;</font></td>
+<td>Do not use the literal constant '2'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-DCL06-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">217:&nbsp;</font></td>
+<td>Unused function's "printf" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">218:&nbsp;</font></td>
+<td>The 'fflush' library function should not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR02-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">218:&nbsp;</font></td>
+<td>The value returned by the POSIX library function 'fflush' should be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">218:&nbsp;</font></td>
+<td>The value returned by the standard library function 'fflush' should be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">218:&nbsp;</font></td>
+<td>Unused function's "fflush" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr id="authViolFAid193H" style="cursor:pointer" onclick="javascript:expandViolation('authViolFAid193H','authViolFAid193', '0')">
+<td width="1%" align="right" style="padding-left:10px">&nbsp;<font class="#000000"><span>+</span></font>&nbsp;
+</td>
+<td width="2%" align="right"><font class="gray">218:&nbsp;</font></td>
+<td>Value returned from method "fflush" should be checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-d-1</font></td>
+</tr>
+<tr id="authViolFAid193" style="display:none">
+<td bgcolor="#F5F5F5" style="padding-left:10px">&nbsp;</td>
+<!--bd_legend_required_marker-->
+<td bgcolor="#F5F5F5"></td>
+<td bgcolor="#F5F5F5" style="padding-right:10px;" colspan="2">
+<table width="100%" style="table-layout:fixed">
+<tr>
+<td><pre style="margin:0px;"><font color="gray">ecu_sim.c&nbsp;(206):&nbsp;</font><font color="gray">char cmd[MAX_COMMAND_LEN];</font>
+<font color="gray">ecu_sim.c&nbsp;(207):&nbsp;</font><font color="gray">char arg[MAX_COMMAND_LEN];</font>
+<font color="gray">ecu_sim.c&nbsp;(209):&nbsp;</font><font color="gray">int num_tokens = sscanf(command, "%s %s", cmd, arg);</font>
+<font color="gray">ecu_sim.c&nbsp;(211):&nbsp;</font><font color="gray">if (strcmp(cmd, "IDENTIFY") == 0) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (strcmp(...) == 0) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(213):&nbsp;</font><font color="gray">} else if (strcmp(cmd, "GET_ALLOWED_MAPS") == 0) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (strcmp(...) == 0) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(215):&nbsp;</font><font color="gray">} else if (strcmp(cmd, "FLASH_MAP") == 0) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (strcmp(...) == 0) (assuming true)</font>
+<font color="gray">ecu_sim.c&nbsp;(216):&nbsp;</font><font color="gray">if (num_tokens &lt; 2) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (num_tokens &lt; 2) (assuming true)</font>
+<font color="gray">ecu_sim.c&nbsp;(217):&nbsp;</font><font color="gray">printf("ERROR: FLASH_MAP requires map_id argument\n");</font>
+<font color="#1569C7"><b>Method call</b>
+</font><font color="#B71C1C"><b>Point by which returned value should be checked</b>&nbsp;
+</font><font color="#B71C1C">ecu_sim.c&nbsp;(218):&nbsp;</font><font color="black">fflush(stdout);</font><font color="green"></font><font color="green"></font></pre></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">222:&nbsp;</font></td>
+<td>The string literal is embedded directly in the code: QUIT</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC41-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">223:&nbsp;</font></td>
+<td>Unused function's "printf" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">224:&nbsp;</font></td>
+<td>The 'fflush' library function should not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR02-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">224:&nbsp;</font></td>
+<td>The value returned by the POSIX library function 'fflush' should be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">224:&nbsp;</font></td>
+<td>The value returned by the standard library function 'fflush' should be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">224:&nbsp;</font></td>
+<td>Unused function's "fflush" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr id="authViolFAid201H" style="cursor:pointer" onclick="javascript:expandViolation('authViolFAid201H','authViolFAid201', '0')">
+<td width="1%" align="right" style="padding-left:10px">&nbsp;<font class="#000000"><span>+</span></font>&nbsp;
+</td>
+<td width="2%" align="right"><font class="gray">224:&nbsp;</font></td>
+<td>Value returned from method "fflush" should be checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-d-1</font></td>
+</tr>
+<tr id="authViolFAid201" style="display:none">
+<td bgcolor="#F5F5F5" style="padding-left:10px">&nbsp;</td>
+<!--bd_legend_required_marker-->
+<td bgcolor="#F5F5F5"></td>
+<td bgcolor="#F5F5F5" style="padding-right:10px;" colspan="2">
+<table width="100%" style="table-layout:fixed">
+<tr>
+<td><pre style="margin:0px;"><font color="gray">ecu_sim.c&nbsp;(206):&nbsp;</font><font color="gray">char cmd[MAX_COMMAND_LEN];</font>
+<font color="gray">ecu_sim.c&nbsp;(207):&nbsp;</font><font color="gray">char arg[MAX_COMMAND_LEN];</font>
+<font color="gray">ecu_sim.c&nbsp;(209):&nbsp;</font><font color="gray">int num_tokens = sscanf(command, "%s %s", cmd, arg);</font>
+<font color="gray">ecu_sim.c&nbsp;(211):&nbsp;</font><font color="gray">if (strcmp(cmd, "IDENTIFY") == 0) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (strcmp(...) == 0) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(213):&nbsp;</font><font color="gray">} else if (strcmp(cmd, "GET_ALLOWED_MAPS") == 0) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (strcmp(...) == 0) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(215):&nbsp;</font><font color="gray">} else if (strcmp(cmd, "FLASH_MAP") == 0) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (strcmp(...) == 0) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(222):&nbsp;</font><font color="gray">} else if (strcmp(cmd, "QUIT") == 0) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (strcmp(...) == 0) (assuming true)</font>
+<font color="gray">ecu_sim.c&nbsp;(223):&nbsp;</font><font color="gray">printf("QUIT_ACK\n");</font>
+<font color="#1569C7"><b>Method call</b>
+</font><font color="#B71C1C"><b>Point by which returned value should be checked</b>&nbsp;
+</font><font color="#B71C1C">ecu_sim.c&nbsp;(224):&nbsp;</font><font color="black">fflush(stdout);</font><font color="green"></font><font color="green"></font></pre></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">225:&nbsp;</font></td>
+<td>The 'exit' library function should not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR05-b-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">225:&nbsp;</font></td>
+<td>The 'exit' library function should not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR04-b-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">227:&nbsp;</font></td>
+<td>Unused function's "printf" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">228:&nbsp;</font></td>
+<td>The 'fflush' library function should not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR02-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">228:&nbsp;</font></td>
+<td>The value returned by the POSIX library function 'fflush' should be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">228:&nbsp;</font></td>
+<td>The value returned by the standard library function 'fflush' should be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">228:&nbsp;</font></td>
+<td>Unused function's "fflush" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr id="authViolFAid210H" style="cursor:pointer" onclick="javascript:expandViolation('authViolFAid210H','authViolFAid210', '0')">
+<td width="1%" align="right" style="padding-left:10px">&nbsp;<font class="#000000"><span>+</span></font>&nbsp;
+</td>
+<td width="2%" align="right"><font class="gray">228:&nbsp;</font></td>
+<td>Value returned from method "fflush" should be checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-d-1</font></td>
+</tr>
+<tr id="authViolFAid210" style="display:none">
+<td bgcolor="#F5F5F5" style="padding-left:10px">&nbsp;</td>
+<!--bd_legend_required_marker-->
+<td bgcolor="#F5F5F5"></td>
+<td bgcolor="#F5F5F5" style="padding-right:10px;" colspan="2">
+<table width="100%" style="table-layout:fixed">
+<tr>
+<td><pre style="margin:0px;"><font color="gray">ecu_sim.c&nbsp;(206):&nbsp;</font><font color="gray">char cmd[MAX_COMMAND_LEN];</font>
+<font color="gray">ecu_sim.c&nbsp;(207):&nbsp;</font><font color="gray">char arg[MAX_COMMAND_LEN];</font>
+<font color="gray">ecu_sim.c&nbsp;(209):&nbsp;</font><font color="gray">int num_tokens = sscanf(command, "%s %s", cmd, arg);</font>
+<font color="gray">ecu_sim.c&nbsp;(211):&nbsp;</font><font color="gray">if (strcmp(cmd, "IDENTIFY") == 0) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (strcmp(...) == 0) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(213):&nbsp;</font><font color="gray">} else if (strcmp(cmd, "GET_ALLOWED_MAPS") == 0) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (strcmp(...) == 0) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(215):&nbsp;</font><font color="gray">} else if (strcmp(cmd, "FLASH_MAP") == 0) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (strcmp(...) == 0) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(222):&nbsp;</font><font color="gray">} else if (strcmp(cmd, "QUIT") == 0) {</font><font color="green">&nbsp;&nbsp;***&nbsp;Condition evaluation: (strcmp(...) == 0) (assuming false)</font>
+<font color="gray">ecu_sim.c&nbsp;(227):&nbsp;</font><font color="gray">printf("ERROR: Unknown command '%s'\n", cmd);</font>
+<font color="#1569C7"><b>Method call</b>
+</font><font color="#B71C1C"><b>Point by which returned value should be checked</b>&nbsp;
+</font><font color="#B71C1C">ecu_sim.c&nbsp;(228):&nbsp;</font><font color="black">fflush(stdout);</font><font color="green"></font><font color="green"></font></pre></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">235:&nbsp;</font></td>
+<td>Prototype of function 'init_system' does not precede function call</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP37-d-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">237:&nbsp;</font></td>
+<td>Unused function's "printf" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">238:&nbsp;</font></td>
+<td>The 'fflush' library function should not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR02-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">238:&nbsp;</font></td>
+<td>The value returned by the POSIX library function 'fflush' should be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-POS54-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">238:&nbsp;</font></td>
+<td>The value returned by the standard library function 'fflush' should be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">238:&nbsp;</font></td>
+<td>Unused function's "fflush" return value</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-EXP12-a-3</font></td>
+</tr>
+<tr id="authViolFAid218H" style="cursor:pointer" onclick="javascript:expandViolation('authViolFAid218H','authViolFAid218', '0')">
+<td width="1%" align="right" style="padding-left:10px">&nbsp;<font class="#000000"><span>+</span></font>&nbsp;
+</td>
+<td width="2%" align="right"><font class="gray">238:&nbsp;</font></td>
+<td>Value returned from method "fflush" should be checked</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR33-d-1</font></td>
+</tr>
+<tr id="authViolFAid218" style="display:none">
+<td bgcolor="#F5F5F5" style="padding-left:10px">&nbsp;</td>
+<!--bd_legend_required_marker-->
+<td bgcolor="#F5F5F5"></td>
+<td bgcolor="#F5F5F5" style="padding-right:10px;" colspan="2">
+<table width="100%" style="table-layout:fixed">
+<tr>
+<td><pre style="margin:0px;"><font color="gray">ecu_sim.c&nbsp;(233):&nbsp;</font><font color="gray">char command[MAX_COMMAND_LEN];</font>
+<font color="gray">ecu_sim.c&nbsp;(235):&nbsp;</font><font color="gray">init_system();</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(78):&nbsp;</font><font color="gray">srand(time(NULL));</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="gray">ecu_sim.c&nbsp;(79):&nbsp;</font><font color="gray">current_vin[0] = '\0';</font>
+<font color="gray">ecu_sim.c&nbsp;(237):&nbsp;</font><font color="gray">printf("ECU_SIM_READY\n");</font>
+<font color="#1569C7"><b>Method call</b>
+</font><font color="#B71C1C"><b>Point by which returned value should be checked</b>&nbsp;
+</font><font color="#B71C1C">ecu_sim.c&nbsp;(238):&nbsp;</font><font color="black">fflush(stdout);</font><font color="green"></font><font color="green"></font></pre></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">241:&nbsp;</font></td>
+<td>The 'fgets' library function should not be used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ERR02-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">241:&nbsp;</font></td>
+<td>The argument number '2' ('essentially unsigned' type) is passed to the function 'fgets' as a parameter with the 'essentially
+signed' type
+</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-INT31-i-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">241:&nbsp;</font></td>
+<td>Unsafe functions 'fgets' is being used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-MSC24-d-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">241:&nbsp;</font></td>
+<td>Unsafe functions 'fgets' is being used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-ENV01-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">241:&nbsp;</font></td>
+<td>Unsafe functions 'fgets' is being used</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-API02-b-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>The expression of the 'essentially signed' type is assigned to an object with the 'essentially character' type</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-INT31-i-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>To the plain char type assign only character values</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-INT07-a-2</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>To the plain char type assign only character values</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-STR00-a-1</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">245:&nbsp;</font></td>
+<td>To the plain char type assign only character values</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-STR04-a-3</font></td>
+</tr>
+<tr>
+<td width="1%" align="right" style="padding-left:10px"></td>
+<td width="2%" align="right"><font class="gray">247:&nbsp;</font></td>
+<td>Operands of the '&gt;' operator have different essential types: 'unsigned int' and 'signed char'</td>
+<td style="padding-right:10px;" align="right"><font class="gray">CERT_C-INT31-j-2</font></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="3"><br></td>
+</tr>
+</table>
+<table xmlns:textutil="textutil" width="800" border="0" bordercolor="#999999" cellpadding="0" cellspacing="0">
+<tr>
+<td colspan="2"><b>Flow Analysis Legend:<br><br></b></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#1569C7"><b>Message</b></font> - violation cause
+</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#B71C1C"><b>Message</b></font> - violation point
+</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green"><b>Message</b></font> - path element annotation
+</td>
+</tr>
+<!--bd_legend_present_marker-->
+</table><br xmlns:textutil="textutil"><br><script language="JavaScript">
+    if(document.getElementById("cs_link_sev") != null) {
+    document.getElementById("cs_link_sev").style.color="#990000";
+    document.getElementById("cs_link_sev").style.textDecoration="underline";
+    }
+    if(document.getElementById("cs_link_sevtrue") != null) {
+    document.getElementById("cs_link_sevtrue").style.color="#990000";
+    document.getElementById("cs_link_sevtrue").style.textDecoration="underline";
+    }
+    </script></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table width="100%" bgcolor="#1D488D" border="0" bordercolor="#999999" cellpadding="10" cellspacing="0">
+<tr>
+<td align="center"><font class="white">&copy;Parasoft Corp. -&nbsp;C++test&nbsp;2025.1.0.20250523B2782&nbsp;Reporting System&nbsp;</font></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

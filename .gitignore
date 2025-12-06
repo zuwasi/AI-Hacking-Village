@@ -1,0 +1,33 @@
+# Compiled C files
+*.exe
+*.o
+*.obj
+
+# Eclipse files
+eclipse/.metadata/
+eclipse/.recommenders/
+eclipse/RemoteSystemsTempFiles/
+eclipse/.cpptest/
+.settings/
+.project
+.cproject
+.externalToolBuilders/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+src/ecu_sim.exe
+
+# Parasoft reports (keep only final reports in reports/)
+eclipse/.cpptest/
