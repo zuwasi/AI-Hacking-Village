@@ -28,9 +28,6 @@ Thumbs.db
 
 # Build artifacts
 src/ecu_sim.exe
-src/ecu_sim_fixed.exe
-src/*.o
-*.o
 
 # Parasoft reports (keep only final reports in reports/)
 eclipse/.cpptest/

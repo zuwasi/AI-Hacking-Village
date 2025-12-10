@@ -32,8 +32,6 @@ class ECUProgrammerGUI:
         self.pending_map = None
         self.flash_state = False
         self.flash_timer = None
-        self.log_flash_state = False
-        self.log_flash_timer = None
         
         self.setup_ui()
         
@@ -104,10 +102,6 @@ class ECUProgrammerGUI:
     def log(self, message):
         self.log_text.insert(tk.END, message + "\n")
         self.log_text.see(tk.END)
-        
-        # Flash red if regulatory violation error appears
-        if "ERROR: Race maps not allowed on ROAD ECUs (regulatory violation)" in message:
-            self.start_log_flashing()
         
     def start_ecu_process(self):
         ecu_exe = os.path.join(os.path.dirname(os.path.dirname(__file__)), "src", "ecu_sim.exe")
@@ -350,38 +344,10 @@ class ECUProgrammerGUI:
         # Schedule next flash toggle (500ms interval)
         self.flash_timer = self.root.after(500, self.start_flashing)
     
-    def start_log_flashing(self):
-        """Start flashing the log window red for regulatory violations"""
-        # Stop any previous log flashing
-        if self.log_flash_timer:
-            self.root.after_cancel(self.log_flash_timer)
-        
-        # Flash for 5 seconds (10 flashes)
-        self.log_flash_count = 0
-        self.flash_log_background()
-    
-    def flash_log_background(self):
-        """Flash the log background between red and white"""
-        if self.log_flash_count >= 10:  # Stop after 10 flashes (5 seconds)
-            self.log_text.config(bg="white")
-            self.log_flash_timer = None
-            return
-        
-        self.log_flash_state = not self.log_flash_state
-        if self.log_flash_state:
-            self.log_text.config(bg="#ffcccc")  # Light red
-        else:
-            self.log_text.config(bg="white")
-        
-        self.log_flash_count += 1
-        self.log_flash_timer = self.root.after(500, self.flash_log_background)
-    
     def on_closing(self):
-        # Stop flashing timers if running
+        # Stop flashing timer if running
         if self.flash_timer:
             self.root.after_cancel(self.flash_timer)
-        if self.log_flash_timer:
-            self.root.after_cancel(self.log_flash_timer)
             
         if self.process and self.process.poll() is None:
             try:

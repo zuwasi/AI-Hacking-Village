@@ -178,66 +178,7 @@ void flash_map(char* map_id) {
     printf("PROMPT: Re-enter VIN from motorcycle documents for verification:\n");
     fflush(stdout);
     
-#ifdef FIXED
-    /* ========================================
-     * FIXED VERSION - Proper Input Validation
-     * ========================================
-     * This version correctly validates scanf return value and input range,
-     * preventing the vulnerability that allows race maps on ROAD ECUs.
-     */
-    
-    // Reset to invalid value before reading
-    vin_verification = -1;
-    
-    // Read VIN and CHECK return value
-    int scan_result = scanf("%d", &vin_verification);
-    
-    // Validate that scanf succeeded
-    if (scan_result != 1) {
-        printf("ERROR: Invalid VIN format. Flash operation aborted.\n");
-        fflush(stdout);
-        // Clear input buffer to prevent issues on next input
-        int c;
-        while ((c = getchar()) != '\n' && c != EOF);
-        return;
-    }
-    
-    // Validate VIN is in valid range (6-digit number)
-    if (vin_verification < 100000 || vin_verification > 999999) {
-        printf("ERROR: VIN must be a 6-digit number (100000-999999). Flash operation aborted.\n");
-        fflush(stdout);
-        return;
-    }
-    
-    int current_vin_num = atoi(current_vin);
-    
-    // Check if VIN matches
-    if (vin_verification == current_vin_num) {
-        // VIN matches - now check if race map on ROAD ECU
-        if (current_ecu_type == ECU_ROAD && map->is_race_map) {
-            printf("ERROR: Race maps not allowed on ROAD ECUs (regulatory violation)\n");
-            fflush(stdout);
-            return;
-        }
-        // VIN matches and map is allowed - proceed to flash
-    } else {
-        // VIN doesn't match
-        printf("ERROR: VIN mismatch. Please try again.\n");
-        fflush(stdout);
-        return;
-    }
-    
-#else
-    /* ========================================
-     * VULNERABLE VERSION - Intentional Bug
-     * ========================================
-     * This version demonstrates ERR33-C violation:
-     * - scanf return value is NOT checked
-     * - If scanf fails, vin_verification stays at -1
-     * - Logic falls through both checks, bypassing security
-     */
-    
-    scanf("%d", &vin_verification);  // ❌ Return value ignored!
+    scanf("%d", &vin_verification);
     
     int current_vin_num = atoi(current_vin);
     
@@ -252,9 +193,6 @@ void flash_map(char* map_id) {
         fflush(stdout);
         return;
     }
-    // ⚠️ If vin_verification is -1, BOTH checks fail and code falls through!
-    
-#endif
     
     if (!is_map_allowed_for_vin(map_id, vehicle)) {
         printf("WARNING: Map not in standard allowed list for this VIN\n");
