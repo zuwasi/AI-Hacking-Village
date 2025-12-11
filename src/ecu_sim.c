@@ -1,22 +1,32 @@
 /*
  * ECU Simulator - Motorcycle Engine Control Unit Programming Tool
  * 
- * INTENTIONAL BUG LOCATION:
- * --------------------------
- * Function: flash_map() around line 175-195
- * Issue: scanf() return value is ignored when reading VIN verification
- * Impact: When user enters malformed input (e.g., "123.5", "ABC", empty),
- *         scanf fails but leaves vin_verification at its previous value (-1).
- *         The check skips both VIN verification and race map protection because
- *         -1 is outside the valid VIN range (100000-999999).
- *         This allows flashing race maps (>54HP) onto ROAD ECUs, violating
- *         regulatory constraints.
+ * SECURITY FIXES APPLIED:
+ * -----------------------
+ * FIX #1 (Line ~185): Check scanf() return value to prevent VIN bypass backdoor
+ *   - Previous: Malformed input bypassed VIN verification and race map restrictions
+ *   - Now: Validates scanf success and clears input buffer on failure
  * 
- * Additional CERT C violations (non-critical noise):
- * - strcpy usage instead of strncpy
+ * FIX #2 (Line ~195): Replace atoi() with strtol() for error detection
+ *   - Previous: atoi() can't detect conversion errors
+ *   - Now: strtol() validates numeric conversion with error checking
+ * 
+ * FIX #3 (Line ~201): Enforce VIN range validation
+ *   - Previous: Logic allowed bypass with out-of-range values
+ *   - Now: Explicitly rejects VINs outside 100000-999999 range
+ * 
+ * FIX #4 (Line ~107): Replace strcpy() with strncpy() for buffer safety
+ *   - Previous: strcpy() has no bounds checking
+ *   - Now: strncpy() with explicit buffer size and null termination
+ * 
+ * FIX #5 (Line ~243): Add width specifiers to sscanf() to prevent overflow
+ *   - Previous: sscanf("%s %s",...) could overflow buffers
+ *   - Now: sscanf("%255s %255s",...) limits input to buffer size
+ * 
+ * Remaining CERT C violations (false positives - stylistic):
  * - Missing const on read-only parameters
- * - Ignoring printf return values
- * - Global variables that could be local
+ * - Ignoring printf/fflush return values (acceptable for console I/O)
+ * - Functions not in header files (single-file demo)
  */
 
 #include <stdio.h>
@@ -104,7 +114,11 @@ void cmd_identify() {
     int selected_idx = rand() % MAX_VINS;
     VehicleInfo* vehicle = &vehicles[selected_idx];
     
-    strcpy(current_vin, vehicle->vin);
+    /* SECURITY FIX #4: Replace strcpy with strncpy to prevent buffer overflow
+     * Previous: strcpy() has no bounds checking
+     * Fix: Use strncpy with explicit buffer size and ensure null termination */
+    strncpy(current_vin, vehicle->vin, MAX_VIN_LEN - 1);
+    current_vin[MAX_VIN_LEN - 1] = '\0';
     current_ecu_type = vehicle->ecu_type;
     current_min_license = vehicle->min_license_grade;
     
@@ -178,9 +192,36 @@ void flash_map(char* map_id) {
     printf("PROMPT: Re-enter VIN from motorcycle documents for verification:\n");
     fflush(stdout);
     
-    scanf("%d", &vin_verification);
+    /* SECURITY FIX #1: Check scanf return value to prevent backdoor
+     * Previous: scanf() return not checked - malformed input left vin_verification at -1
+     * Impact: Bypassed both VIN check and race map restriction on ROAD ECUs
+     * Fix: Validate scanf returns 1 (successful read) before proceeding */
+    int scan_result = scanf("%d", &vin_verification);
+    if (scan_result != 1) {
+        printf("ERROR: Invalid VIN format. Must be numeric.\n");
+        fflush(stdout);
+        while (getchar() != '\n');
+        return;
+    }
     
-    int current_vin_num = atoi(current_vin);
+    /* SECURITY FIX #2: Replace atoi with strtol for proper error detection
+     * Previous: atoi() returns 0 on error, no way to detect conversion failures
+     * Fix: Use strtol() which provides error detection via endptr */
+    char* endptr;
+    long current_vin_num = strtol(current_vin, &endptr, 10);
+    if (*endptr != '\0' || current_vin_num <= 0) {
+        printf("ERROR: Invalid VIN format in database.\n");
+        fflush(stdout);
+        return;
+    }
+    
+    /* SECURITY FIX #3: Validate VIN is in expected range
+     * Ensure both input and stored VIN are 6-digit numbers */
+    if (vin_verification < 100000 || vin_verification > 999999) {
+        printf("ERROR: VIN must be 6 digits (100000-999999).\n");
+        fflush(stdout);
+        return;
+    }
     
     if (vin_verification == current_vin_num) {
         if (current_ecu_type == ECU_ROAD && map->is_race_map) {
@@ -188,7 +229,7 @@ void flash_map(char* map_id) {
             fflush(stdout);
             return;
         }
-    } else if (vin_verification >= 100000 && vin_verification <= 999999) {
+    } else {
         printf("ERROR: VIN mismatch. Please try again.\n");
         fflush(stdout);
         return;
@@ -207,7 +248,10 @@ void process_command(char* command) {
     char cmd[MAX_COMMAND_LEN];
     char arg[MAX_COMMAND_LEN];
     
-    int num_tokens = sscanf(command, "%s %s", cmd, arg);
+    /* SECURITY FIX #5: Add width specifiers to sscanf to prevent buffer overflow
+     * Previous: sscanf("%s %s",...) could overflow cmd and arg buffers
+     * Fix: Use format "%255s %255s" to limit read to buffer size minus 1 */
+    int num_tokens = sscanf(command, "%255s %255s", cmd, arg);
     
     if (strcmp(cmd, "IDENTIFY") == 0) {
         cmd_identify();
