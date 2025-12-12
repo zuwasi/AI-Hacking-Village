@@ -1,0 +1,47 @@
+suppression-begin
+file: ecu_sim.c
+rule-id: CERT_C-ERR33-d
+reason: Return values from printf/fflush not needed for console stdout operations in demo app
+suppression-end
+
+suppression-begin
+file: ecu_sim.c
+rule-id: CERT_C-INT31-a
+reason: Boolean checks using if(condition) are intentional and safe
+suppression-end
+
+suppression-begin
+file: ecu_sim.c
+rule-id: CERT_C-INT31-i  
+reason: Ternary operator assignments are intentional (e.g., string selection based on enum)
+suppression-end
+
+suppression-begin
+file: ecu_sim.c
+rule-id: CERT_C-INT31-j
+reason: Comparisons between int and long are safe within VIN number range (6 digits)
+suppression-end
+
+suppression-begin
+file: ecu_sim.c
+rule-id: CERT_C-CON33-a
+reason: strtol is thread-safe in this single-threaded console application
+suppression-end
+
+suppression-begin
+file: ecu_sim.c
+rule-id: CERT_C-POS54-a
+reason: POSIX function errors (fflush) not actionable in console demo
+suppression-end
+
+suppression-begin
+file: ecu_sim.c
+rule-id: CERT_C-MSC32-d
+reason: time(NULL) provides sufficient entropy for non-cryptographic random vehicle selection
+suppression-end
+
+suppression-begin
+file: ecu_sim.c
+rule-id: CERT_C-DCL37-d
+reason: ECU_ROAD and ECU_RACE are application-specific enum names, not redefining standard library
+suppression-end
