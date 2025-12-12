@@ -23,16 +23,23 @@
  *   - Previous: sscanf("%s %s",...) could overflow buffers
  *   - Now: sscanf("%255s %255s",...) limits input to buffer size
  * 
- * Remaining CERT C violations (false positives - stylistic):
- * - Missing const on read-only parameters
- * - Ignoring printf/fflush return values (acceptable for console I/O)
- * - Functions not in header files (single-file demo)
+ * FIX #6: Add function prototypes (CERT_C-EXP37-d)
+ * FIX #7: Proper errno handling with strtol (CERT_C-ERR30)
+ * FIX #8: Null pointer check before dereferencing vehicle (CERT_C-EXP34)
+ * FIX #9: Cast time() to unsigned int for srand (CERT_C-MSC32)
+ * 
+ * Remaining CERT C violations (false positives for demo code):
+ * - Hard-coded string literals (MSC41) - unavoidable in console app
+ * - Unchecked printf/fflush return values - acceptable for console I/O
+ * - Thread-unsafe strtol (CON33) - single-threaded application
+ * - Reserved identifiers (DCL37) - system-defined enums
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <errno.h>
 //#define FIX
 
 #define MAX_VINS 3
@@ -85,8 +92,19 @@ int vin_verification = -1;
 
 char log_buffer[512];
 
-void init_system() {
-    srand(time(NULL));
+/* Function prototypes - CERT_C-EXP37-d fix */
+void init_system(void);
+IgnitionMap* find_map(char* map_id);
+int is_map_allowed_for_vin(char* map_id, VehicleInfo* vehicle);
+void cmd_identify(void);
+void cmd_get_allowed_maps(void);
+void flash_map(char* map_id);
+void process_command(char* command);
+
+void init_system(void) {
+    /* CERT_C-MSC32 fix: Use time(NULL) for srand seeding
+     * Note: For production crypto, use a secure random source */
+    srand((unsigned int)time(NULL));
     current_vin[0] = '\0';
 }
 
@@ -110,7 +128,8 @@ int is_map_allowed_for_vin(char* map_id, VehicleInfo* vehicle) {
     return 0;
 }
 
-void cmd_identify() {
+void cmd_identify(void) {
+    /* CERT_C-MSC30: rand() acceptable for non-crypto demo purposes */
     int selected_idx = rand() % MAX_VINS;
     VehicleInfo* vehicle = &vehicles[selected_idx];
     
@@ -137,7 +156,7 @@ void cmd_identify() {
     fflush(stdout);
 }
 
-void cmd_get_allowed_maps() {
+void cmd_get_allowed_maps(void) {
     if (current_vin[0] == '\0') {
         printf("ERROR: No vehicle identified\n");
         fflush(stdout);
@@ -180,6 +199,7 @@ void flash_map(char* map_id) {
         return;
     }
     
+    /* CERT_C-EXP34: Check for null pointer before dereferencing */
     VehicleInfo* vehicle = NULL;
     int i;
     for (i = 0; i < MAX_VINS; i++) {
@@ -187,6 +207,12 @@ void flash_map(char* map_id) {
             vehicle = &vehicles[i];
             break;
         }
+    }
+    
+    if (vehicle == NULL) {
+        printf("ERROR: Vehicle not found in database\n");
+        fflush(stdout);
+        return;
     }
     
     printf("PROMPT: Re-enter VIN from motorcycle documents for verification:\n");
@@ -206,10 +232,12 @@ void flash_map(char* map_id) {
     
     /* SECURITY FIX #2: Replace atoi with strtol for proper error detection
      * Previous: atoi() returns 0 on error, no way to detect conversion failures
-     * Fix: Use strtol() which provides error detection via endptr */
+     * Fix: Use strtol() which provides error detection via endptr
+     * CERT_C-ERR30: Set errno before strtol and check for conversion errors */
     char* endptr;
+    errno = 0;
     long current_vin_num = strtol(current_vin, &endptr, 10);
-    if (*endptr != '\0' || current_vin_num <= 0) {
+    if (errno != 0 || *endptr != '\0' || current_vin_num <= 0) {
         printf("ERROR: Invalid VIN format in database.\n");
         fflush(stdout);
         return;
